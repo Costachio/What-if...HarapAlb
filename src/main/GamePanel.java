@@ -34,7 +34,7 @@ public class GamePanel extends JPanel {
     }
 
     private void loadAnimations() {
-        idleAnimation = new BufferedImage[12];
+        idleAnimation = new BufferedImage[13];
         for( int i = 0; i < idleAnimation.length; i++)
             idleAnimation[i]=img.getSubimage(i*32,0,32, 32);
 
@@ -78,7 +78,7 @@ public class GamePanel extends JPanel {
         {
             animationTick =0;
             animationIndex++;
-            if(animationTick >= idleAnimation.length)
+            if(animationIndex >= idleAnimation.length)
                 animationIndex = 0;
         }
 
@@ -87,6 +87,7 @@ public class GamePanel extends JPanel {
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         updateAnimationTick();
+
         g.drawImage(idleAnimation[animationIndex], (int)xDelta, (int)yDelta,64, 64, null);
 
     }
