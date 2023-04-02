@@ -78,15 +78,15 @@ public class GamePanel extends JPanel {
         {
             animationTick =0;
             animationIndex++;
-            if(animationTick == idleAnimation.length)
+            if(animationTick >= idleAnimation.length)
                 animationIndex = 0;
         }
 
     }
 
     public void paintComponent(Graphics g) {
+        super.paintComponent(g);
         updateAnimationTick();
-
         g.drawImage(idleAnimation[animationIndex], (int)xDelta, (int)yDelta,64, 64, null);
 
     }
