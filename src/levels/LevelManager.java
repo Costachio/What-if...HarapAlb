@@ -19,8 +19,8 @@ public class LevelManager {
 
     private void importOutsideSprites() {
         BufferedImage img = LoadSave.GetSpriteAtlas(LoadSave.LEVEL_ATLAS);
-        levelSprite = new BufferedImage[8];
-        for (int i = 0; i < 7; i++) {
+        levelSprite = new BufferedImage[9];
+        for (int i = 0; i < 8; i++) {
             levelSprite[i] = img.getSubimage(64 * i, 0, 64, 67);
 
         }
