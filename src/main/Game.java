@@ -1,7 +1,8 @@
 package main;
 
-import entities.Player;
-import levels.LevelManager;
+import gamestates.Gamestate;
+import gamestates.Menu;
+import gamestates.Playing;
 import utilz.LoadSave;
 
 import java.awt.*;
@@ -13,8 +14,10 @@ public class Game implements Runnable {
     private Thread gameThread;
     private final int FPS_SET = 120;
     private final int UPS_SET = 200;
-    private Player player;
-    private LevelManager levelManager;
+
+    private Playing playing;
+    private Menu menu;
+
 
     public final static int TILES_DEFAULT_SIZE = 32;
     public final static float SCALE = 2.0f;
@@ -23,12 +26,6 @@ public class Game implements Runnable {
     public final static int TILES_SIZE = (int) (TILES_DEFAULT_SIZE * SCALE);
     public final static int GAME_WIDTH = TILES_SIZE * TILES_IN_WIDTH;
     public final static int GAME_HEIGHT = TILES_SIZE * TILES_IN_HEIGHT;
-    private int xLvlOffset;
-    private int leftBorder = (int) (0.2 * Game.GAME_WIDTH);
-    private int rightBorder = (int) (0.8 * Game.GAME_WIDTH);
-    private int lvlTilesWide = LoadSave.GetLevelData()[0].length;
-    private int maxTilesOffset = lvlTilesWide - Game.TILES_IN_WIDTH;
-    private int maxLvlOffsetX = maxTilesOffset * Game.TILES_SIZE;
 
     public Game() {
         initClasses();
@@ -41,9 +38,7 @@ public class Game implements Runnable {
     }
 
     private void initClasses() {
-        levelManager = new LevelManager(this);
-        player = new Player(200, 200, (int) (64 * SCALE), (int) (64 * SCALE));
-        player.loadLevelData(levelManager.getCurrentLevel().getLevelData());
+
     }
 
     private void startGameLoop() {
@@ -52,28 +47,33 @@ public class Game implements Runnable {
     }
 
     public void update() {
-        levelManager.update();
-        player.update();
-        checkCloseToBorder();
+
+        switch (Gamestate.state){
+            case MENU:
+
+                break;
+            case PLAYING:
+
+                break;
+            default:
+                break;
+        }
     }
 
-    private void checkCloseToBorder() {
-        int playerX = (int) player.getHitbox().x;
-        int diff = playerX - xLvlOffset;
 
-        if (diff > rightBorder)
-            xLvlOffset += diff - rightBorder;
-        else if (diff < leftBorder)
-            xLvlOffset += diff - leftBorder;
-		if(xLvlOffset > maxLvlOffsetX)
-			xLvlOffset = maxLvlOffsetX;
-		else if (xLvlOffset < 0)
-			xLvlOffset = 0;
-    }
 
     public void render(Graphics g) {
-        levelManager.draw(g, xLvlOffset);
-        player.render(g, xLvlOffset);
+
+        switch (Gamestate.state){
+            case MENU:
+
+                break;
+            case PLAYING:
+
+                break;
+            default:
+                break;
+        }
 
     }
 
@@ -125,11 +125,16 @@ public class Game implements Runnable {
 
     }
 
-    public Player getPlayer() {
-        return player;
-    }
 
     public void windowFocusLost() {
-        player.resetDirBooleans();
+        if(Gamestate.state == Gamestate.PLAYING)
+            playing.getPlayer().resetDirBooleans();
+
+    }
+
+    public Menu getMenu(){
+        return menu;
+    } public Playing getPlaying(){
+        return playing;
     }
 }
