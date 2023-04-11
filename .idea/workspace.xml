@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="93de604e-7f40-4dbd-9b20-acc9adbfe0da" name="Changes" comment="-collision and gravity">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/entities/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/entities/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/utilz/HelpMethods.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/utilz/HelpMethods.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/levels/LevelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/levels/LevelManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilz/HelpMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utilz/HelpMethods.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilz/LoadSave.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utilz/LoadSave.java" afterDir="false" />
+    <list default="true" id="93de604e-7f40-4dbd-9b20-acc9adbfe0da" name="Changes" comment="-level mai mare">
+      <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/levels/LevelManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/levels/LevelManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/main/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/main/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/utilz/LoadSave.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/utilz/LoadSave.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +93,7 @@
       <workItem from="1681134826052" duration="753000" />
       <workItem from="1681135586543" duration="79000" />
       <workItem from="1681148642054" duration="178000" />
-      <workItem from="1681201350761" duration="2380000" />
+      <workItem from="1681201350761" duration="2703000" />
     </task>
     <task id="LOCAL-00001" summary="-hitbox 1">
       <created>1680857651565</created>
@@ -142,7 +137,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681073119080</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="-level mai mare">
+      <created>1681203958296</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1681203958296</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -163,6 +165,7 @@
     <MESSAGE value="-hitbox 1" />
     <MESSAGE value="-hitbox pro" />
     <MESSAGE value="-collision and gravity" />
-    <option name="LAST_COMMIT_MESSAGE" value="-collision and gravity" />
+    <MESSAGE value="-level mai mare" />
+    <option name="LAST_COMMIT_MESSAGE" value="-level mai mare" />
   </component>
 </project>
