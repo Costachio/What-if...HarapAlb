@@ -19,6 +19,8 @@ public class Player extends Entity {
     private boolean left, up, right, down, jump;
     private float playerSpeed = 2f;
     private int[][] levelData;
+    private float xDrawOffset = 14 * Game.SCALE;
+    private float yDrawOffset = 28 * Game.SCALE;
 
 
     //Jumping / Gravity
@@ -26,8 +28,7 @@ public class Player extends Entity {
     private float gravity = 0.04f * Game.SCALE;
     private float jumpSpeed = -2.25f * Game.SCALE;
     private float fallSpeedAfterCollision = 0.5f * Game.SCALE;
-    private float xDrawOffset = 14 * Game.SCALE;
-    private float yDrawOffset = 28 * Game.SCALE;
+
     private boolean inAir = false;
 
     public Player(float x, float y, int width, int height) {
@@ -45,9 +46,8 @@ public class Player extends Entity {
 
     }
 
-    public void render(Graphics g) {
-        g.drawImage(animations[playerAction][animationIndex], (int) (hitbox.x - xDrawOffset), (int) (hitbox.y - yDrawOffset), width, height, null);
-//        drawHitbox(g);
+    public void render(Graphics g, int lvlOffset) {
+        g.drawImage(animations[playerAction][animationIndex], (int) (hitbox.x - xDrawOffset) - lvlOffset, (int) (hitbox.y - yDrawOffset), width, height, null);
 
     }
 
@@ -77,9 +77,9 @@ public class Player extends Entity {
         }
         if (attacking)
             playerAction = ATTACK_1;
-        if (startAnimation != playerAction) {
+        if (startAnimation != playerAction)
             resetAnimation();
-        }
+
     }
 
     private void resetAnimation() {
@@ -91,14 +91,17 @@ public class Player extends Entity {
         moving = false;
         if (jump)
             jump();
-        if (!left && !right && !inAir)
-            return;
+//        if (!left && !right && !inAir)
+//            return;
+        if(!inAir)
+            if((!left && !right) ||(left && right))
+                return;
 
         float xSpeed = 0;
 
         if (left)
             xSpeed -= playerSpeed;
-        else if (right)
+        if (right)
             xSpeed += playerSpeed;
 
         if (!inAir)
