@@ -38,6 +38,8 @@ public class Game implements Runnable {
     }
 
     private void initClasses() {
+        menu = new Menu(this);
+        playing= new Playing(this);
 
     }
 
@@ -50,10 +52,10 @@ public class Game implements Runnable {
 
         switch (Gamestate.state){
             case MENU:
-
+                menu.update();
                 break;
             case PLAYING:
-
+                playing.update();
                 break;
             default:
                 break;
@@ -66,10 +68,10 @@ public class Game implements Runnable {
 
         switch (Gamestate.state){
             case MENU:
-
+                menu.draw(g);
                 break;
             case PLAYING:
-
+                playing.draw(g);
                 break;
             default:
                 break;

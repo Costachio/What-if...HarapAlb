@@ -29,7 +29,7 @@ public class Playing extends State implements Statemethods {
 
     private void initClasses() {
         levelManager = new LevelManager(game);
-        player = new Player(200, 200, (int) (32 * Game.SCALE), (int) (32 * Game.SCALE));
+        player = new Player(200, 200, (int) (64 * Game.SCALE), (int) (64 * Game.SCALE));
         player.loadLevelData(levelManager.getCurrentLevel().getLevelData());
     }
 
@@ -100,6 +100,8 @@ public class Playing extends State implements Statemethods {
             case KeyEvent.VK_SPACE:
                 player.setJump(true);
                 break;
+            case KeyEvent.VK_BACK_SPACE:
+                Gamestate.state =Gamestate.MENU;
         }
 
     }
