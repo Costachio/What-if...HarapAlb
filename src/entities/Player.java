@@ -17,7 +17,7 @@ public class Player extends Entity {
     private int playerAction = HIT;
     private boolean moving = false, attacking = false;
     private boolean left, up, right, down, jump;
-    private float playerSpeed = 2f;
+    private float playerSpeed = 1.0f * Game.SCALE;
     private int[][] levelData;
     private float xDrawOffset = 14 * Game.SCALE;
     private float yDrawOffset = 28 * Game.SCALE;
@@ -34,7 +34,7 @@ public class Player extends Entity {
     public Player(float x, float y, int width, int height) {
         super(x, y, width, height);
         loadAnimations();
-        initHitbox(x, y, 26 * Game.SCALE, 29 * Game.SCALE);
+        initHitbox(x, y, (int) (26 * Game.SCALE), (int) (29 * Game.SCALE));
 
     }
 
@@ -71,8 +71,8 @@ public class Player extends Entity {
             playerAction = RUNNING;
         else
             playerAction = IDLE;
-        if(inAir){
-            if(airSpeed < 0)
+        if (inAir) {
+            if (airSpeed < 0)
                 playerAction = JUMP;
         }
         if (attacking)
@@ -93,8 +93,8 @@ public class Player extends Entity {
             jump();
 //        if (!left && !right && !inAir)
 //            return;
-        if(!inAir)
-            if((!left && !right) ||(left && right))
+        if (!inAir)
+            if ((!left && !right) || (left && right))
                 return;
 
         float xSpeed = 0;
@@ -164,7 +164,7 @@ public class Player extends Entity {
 
     public void loadLevelData(int[][] levelData) {
         this.levelData = levelData;
-        if(!IsEntityOnFloor(hitbox, levelData))
+        if (!IsEntityOnFloor(hitbox, levelData))
             inAir = true;
     }
 

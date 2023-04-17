@@ -57,7 +57,7 @@ public class Playing extends State implements Statemethods {
             xLvlOffset += diff - rightBorder;
         else if (diff < leftBorder)
             xLvlOffset += diff - leftBorder;
-        if(xLvlOffset > maxLvlOffsetX)
+        if (xLvlOffset > maxLvlOffsetX)
             xLvlOffset = maxLvlOffsetX;
         else if (xLvlOffset < 0)
             xLvlOffset = 0;
@@ -101,7 +101,7 @@ public class Playing extends State implements Statemethods {
                 player.setJump(true);
                 break;
             case KeyEvent.VK_BACK_SPACE:
-                Gamestate.state =Gamestate.MENU;
+                Gamestate.state = Gamestate.MENU;
         }
 
     }
