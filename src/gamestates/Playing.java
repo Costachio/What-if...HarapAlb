@@ -4,6 +4,7 @@ package gamestates;
 import entities.Player;
 import levels.LevelManager;
 import main.Game;
+import ui.PauseOverlay;
 import utilz.LoadSave;
 
 import java.awt.*;
@@ -13,6 +14,8 @@ import java.awt.event.MouseEvent;
 public class Playing extends State implements Statemethods {
     private Player player;
     private LevelManager levelManager;
+    private PauseOverlay pauseOverlay;
+    private boolean paused = false;
 
     private int xLvlOffset;
     private int leftBorder = (int) (0.2 * Game.GAME_WIDTH);
@@ -31,14 +34,19 @@ public class Playing extends State implements Statemethods {
         levelManager = new LevelManager(game);
         player = new Player(200, 200, (int) (64 * Game.SCALE), (int) (64 * Game.SCALE));
         player.loadLevelData(levelManager.getCurrentLevel().getLevelData());
+        pauseOverlay = new PauseOverlay(this);
     }
 
 
     @Override
     public void update() {
-        levelManager.update();
-        player.update();
-        checkCloseToBorder();
+        if (!paused) {
+            levelManager.update();
+            player.update();
+            checkCloseToBorder();
+        } else {
+            pauseOverlay.update();
+        }
 
     }
 
@@ -46,6 +54,9 @@ public class Playing extends State implements Statemethods {
     public void draw(Graphics g) {
         levelManager.draw(g, xLvlOffset);
         player.render(g, xLvlOffset);
+        if (paused)
+            pauseOverlay.draw(g);
+
 
     }
 
@@ -71,20 +82,6 @@ public class Playing extends State implements Statemethods {
 
     }
 
-    @Override
-    public void mousePressed(MouseEvent e) {
-
-    }
-
-    @Override
-    public void mouseReleased(MouseEvent e) {
-
-    }
-
-    @Override
-    public void mouseMoved(MouseEvent e) {
-
-    }
 
     @Override
     public void keyPressed(KeyEvent e) {
@@ -100,8 +97,9 @@ public class Playing extends State implements Statemethods {
             case KeyEvent.VK_SPACE:
                 player.setJump(true);
                 break;
-            case KeyEvent.VK_BACK_SPACE:
-                Gamestate.state = Gamestate.MENU;
+            case KeyEvent.VK_ESCAPE:
+                paused = !paused;
+                break;
         }
 
     }
@@ -121,6 +119,37 @@ public class Playing extends State implements Statemethods {
                 break;
         }
 
+    }
+
+
+    public void mouseDragged(MouseEvent e) {
+        if (paused)
+            pauseOverlay.mouseDragged(e);
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+        if (paused)
+            pauseOverlay.mousePressed(e);
+
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+        if (paused)
+            pauseOverlay.mouseReleased(e);
+
+    }
+
+    @Override
+    public void mouseMoved(MouseEvent e) {
+        if (paused)
+            pauseOverlay.mouseMoved(e);
+
+    }
+
+    public void unpauseGame() {
+        paused = false;
     }
 
     public void windowFocusLost() {
