@@ -23,7 +23,7 @@ public class Constants {
         public static final int CYCLOP_WIDTH = (int) (CYCLOP_WIDTH_DEFAULT * Game.SCALE*1.5);
         public static final int CYCLOP_HEIGHT = (int) (CYCLOP_HEIGHT_DEFAULT * Game.SCALE*1.5);
 
-        public static final int CYCLOP_DRAWOFFSET_X = (int) (50 * Game.SCALE);
+        public static final int CYCLOP_DRAWOFFSET_X = (int) (30 * Game.SCALE);
         public static final int CYCLOP_DRAWOFFSET_Y = (int) (60 * Game.SCALE);
         public static int GetSpriteAmount(int enemy_type, int enemy_state) {
 

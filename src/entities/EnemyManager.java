@@ -32,7 +32,7 @@ public class EnemyManager {
 
     public void draw(Graphics g, int xLvlOffset) {
         drawCyclops(g, xLvlOffset);
-//        drawHitbox(g, xLvlOffset);
+        drawHitbox(g, xLvlOffset);
 
     }
 
@@ -56,8 +56,7 @@ public class EnemyManager {
         // For debugging the hitbox
         g.setColor(Color.PINK);
         for (Cyclop c: cyclops)
-            g.drawRect((int) c.getHitbox().x - xLvlOffset - CYCLOP_DRAWOFFSET_X,
-                    (int) c.getHitbox().y - CYCLOP_DRAWOFFSET_Y, CYCLOP_WIDTH, CYCLOP_HEIGHT);
+            g.drawRect((int) c.getHitbox().x - xLvlOffset, (int) c.getHitbox().y, (int) c.getHitbox().width, (int) c.getHitbox().height);
     }
 
 }

@@ -4,41 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="93de604e-7f40-4dbd-9b20-acc9adbfe0da" name="Changes" comment="-pause menu">
-      <change afterPath="$PROJECT_DIR$/src/entities/Cyclop.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/entities/Enemy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/entities/EnemyManager.java" afterDir="false" />
+    <list default="true" id="93de604e-7f40-4dbd-9b20-acc9adbfe0da" name="Changes" comment="-enemys">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/entities/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/entities/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/gamestates/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/gamestates/Menu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/gamestates/Playing.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/gamestates/Playing.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/level_one_data_long.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/level_one_data_long.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/levels/LevelManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/levels/LevelManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/ui/MenuButton.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/ui/MenuButton.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/ui/PauseOverlay.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/ui/PauseOverlay.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/ui/SoundButton.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/ui/SoundButton.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/ui/UrmButton.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/ui/UrmButton.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/ui/VolumeButton.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/ui/VolumeButton.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/utilz/Constants$Directions.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/utilz/Constants$Directions.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/utilz/Constants$PlayerConstants.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/utilz/Constants$PlayerConstants.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/utilz/Constants$UI$Buttons.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/utilz/Constants$UI$Buttons.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/utilz/Constants$UI$PauseButtons.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/utilz/Constants$UI$PauseButtons.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/utilz/Constants$UI$URMButtons.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/utilz/Constants$UI$URMButtons.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/utilz/Constants$UI$VolumeButtons.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/utilz/Constants$UI$VolumeButtons.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/utilz/Constants$UI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/utilz/Constants$UI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/utilz/Constants.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/utilz/Constants.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/utilz/HelpMethods.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/utilz/HelpMethods.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/utilz/LoadSave.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/utilz/LoadSave.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/level_one_data_long.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/level_one_data_long.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gamestates/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gamestates/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gamestates/Playing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gamestates/Playing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/levels/LevelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/levels/LevelManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/GameWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/GameWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/entities/Cyclop.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/entities/Cyclop.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/entities/EnemyManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/entities/EnemyManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/utilz/Constants$EnemyConstants.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/utilz/Constants$EnemyConstants.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/Cyclop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Cyclop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/EnemyManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/EnemyManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utilz/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utilz/Constants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utilz/HelpMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utilz/HelpMethods.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilz/LoadSave.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utilz/LoadSave.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,7 +110,7 @@
       <workItem from="1681934945332" duration="4174000" />
       <workItem from="1681977479491" duration="182000" />
       <workItem from="1682005701307" duration="858000" />
-      <workItem from="1682089420793" duration="19441000" />
+      <workItem from="1682089420793" duration="21471000" />
     </task>
     <task id="LOCAL-00001" summary="-hitbox 1">
       <created>1680857651565</created>
@@ -264,7 +238,28 @@
       <option name="project" value="LOCAL" />
       <updated>1681938944116</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="-enemys">
+      <created>1682109612783</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1682109612783</updated>
+    </task>
+    <task id="LOCAL-00020" summary="-enemys">
+      <created>1682109621496</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1682109621496</updated>
+    </task>
+    <task id="LOCAL-00021" summary="-enemys">
+      <created>1682109627168</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1682109627168</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -289,6 +284,7 @@
     <MESSAGE value="-game states" />
     <MESSAGE value="-menu" />
     <MESSAGE value="-pause menu" />
-    <option name="LAST_COMMIT_MESSAGE" value="-pause menu" />
+    <MESSAGE value="-enemys" />
+    <option name="LAST_COMMIT_MESSAGE" value="-enemys" />
   </component>
 </project>
