@@ -3,14 +3,63 @@ package utilz;
 import main.Game;
 
 public class Constants {
-    public class UI {
-        public class Buttons {
+
+    public static class EnemyConstants {
+        public static final int CYCLOP = 0;
+
+        public static final int IDLE = 0;
+        public static final int MOVE = 1;
+        public static final int STOMP = 2;
+        public static final int THROW = 3;
+        public static final int HIT = 4;
+        public static final int HIT_MORE = 5;
+        public static final int DEAD = 6;
+        public static final int LASER = 8;
+
+
+        public static final int CYCLOP_WIDTH_DEFAULT = 64;
+        public static final int CYCLOP_HEIGHT_DEFAULT = 64;
+
+        public static final int CYCLOP_WIDTH = (int) (CYCLOP_WIDTH_DEFAULT * Game.SCALE*1.5);
+        public static final int CYCLOP_HEIGHT = (int) (CYCLOP_HEIGHT_DEFAULT * Game.SCALE*1.5);
+
+        public static final int CYCLOP_DRAWOFFSET_X = (int) (50 * Game.SCALE);
+        public static final int CYCLOP_DRAWOFFSET_Y = (int) (60 * Game.SCALE);
+        public static int GetSpriteAmount(int enemy_type, int enemy_state) {
+
+            switch (enemy_type) {
+                case CYCLOP:
+                    switch (enemy_state) {
+                        case IDLE:
+                            return 15;
+                        case MOVE:
+                            return 12;
+                        case STOMP:
+                            return 7;
+                        case HIT:
+                            return 3;
+                        case HIT_MORE:
+                            return 5;
+                        case DEAD:
+                            return 9;
+                    }
+            }
+
+            return 0;
+
+        }
+
+    }
+
+    public static class UI {
+        public static class Buttons {
             public static final int BUTTON_WIDTH_DEFAULT = 140;
             public static final int BUTTON_HEIGHT_DEFAULT = 56;
             public static final int BUTTON_WIDTH = (int) (BUTTON_WIDTH_DEFAULT * Game.SCALE);
             public static final int BUTTON_HEIGHT = (int) (BUTTON_HEIGHT_DEFAULT * Game.SCALE);
 
         }
+
         public static class PauseButtons {
             public static final int SOUND_SIZE_DEFAULT = 42;
             public static final int SOUND_SIZE = (int) (SOUND_SIZE_DEFAULT * Game.SCALE);

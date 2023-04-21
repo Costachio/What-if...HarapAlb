@@ -1,21 +1,25 @@
 package gamestates;
 
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.event.KeyEvent;
+import java.awt.event.MouseEvent;
+import java.awt.image.BufferedImage;
+import java.util.Random;
 
+import entities.EnemyManager;
 import entities.Player;
 import levels.LevelManager;
 import main.Game;
 import ui.PauseOverlay;
 import utilz.LoadSave;
 
-import java.awt.*;
-import java.awt.event.KeyEvent;
-import java.awt.event.MouseEvent;
-
 public class Playing extends State implements Statemethods {
-    private Player player;
-    private LevelManager levelManager;
-    private PauseOverlay pauseOverlay;
-    private boolean paused = false;
+	private Player player;
+	private LevelManager levelManager;
+	private EnemyManager enemyManager;
+	private PauseOverlay pauseOverlay;
+	private boolean paused = false;
 
     private int xLvlOffset;
     private int leftBorder = (int) (0.2 * Game.GAME_WIDTH);
@@ -24,14 +28,18 @@ public class Playing extends State implements Statemethods {
     private int maxTilesOffset = lvlTilesWide - Game.TILES_IN_WIDTH;
     private int maxLvlOffsetX = maxTilesOffset * Game.TILES_SIZE;
 
+    private BufferedImage backgroundImg;
 
     public Playing(Game game) {
         super(game);
         initClasses();
+
+        backgroundImg = LoadSave.GetSpriteAtlas(LoadSave.PLAYING_BG_IMG);
     }
 
     private void initClasses() {
         levelManager = new LevelManager(game);
+        enemyManager = new EnemyManager(this);
         player = new Player(200, 200, (int) (64 * Game.SCALE), (int) (64 * Game.SCALE));
         player.loadLevelData(levelManager.getCurrentLevel().getLevelData());
         pauseOverlay = new PauseOverlay(this);
@@ -43,6 +51,7 @@ public class Playing extends State implements Statemethods {
         if (!paused) {
             levelManager.update();
             player.update();
+            enemyManager.update(levelManager.getCurrentLevel().getLevelData());
             checkCloseToBorder();
         } else {
             pauseOverlay.update();
@@ -50,15 +59,7 @@ public class Playing extends State implements Statemethods {
 
     }
 
-    @Override
-    public void draw(Graphics g) {
-        levelManager.draw(g, xLvlOffset);
-        player.render(g, xLvlOffset);
-        if (paused)
-            pauseOverlay.draw(g);
 
-
-    }
 
     private void checkCloseToBorder() {
         int playerX = (int) player.getHitbox().x;
@@ -72,6 +73,20 @@ public class Playing extends State implements Statemethods {
             xLvlOffset = maxLvlOffsetX;
         else if (xLvlOffset < 0)
             xLvlOffset = 0;
+    }
+
+    @Override
+    public void draw(Graphics g) {
+        g.drawImage(backgroundImg, 0, 0, Game.GAME_WIDTH, Game.GAME_HEIGHT, null);
+        levelManager.draw(g, xLvlOffset);
+        player.render(g, xLvlOffset);
+        enemyManager.draw(g, xLvlOffset);
+
+        if (paused) {
+            g.setColor(new Color(0, 0, 0, 150));
+            g.fillRect(0, 0, Game.GAME_WIDTH, Game.GAME_HEIGHT);
+            pauseOverlay.draw(g);
+        }
     }
 
     @Override
