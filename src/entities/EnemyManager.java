@@ -25,9 +25,9 @@ public class EnemyManager {
         System.out.println("size of cyclops: " + cyclops.size());
     }
 
-    public void update(int[][] levelData) {
+    public void update(int[][] levelData, Player player) {
         for (Cyclop c : cyclops)
-            c.update(levelData);
+            c.update(levelData, player);
     }
 
     public void draw(Graphics g, int xLvlOffset) {
