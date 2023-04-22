@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="93de604e-7f40-4dbd-9b20-acc9adbfe0da" name="Changes" comment="-enemies 2">
+    <list default="true" id="93de604e-7f40-4dbd-9b20-acc9adbfe0da" name="Changes" comment="-enemies and health">
+      <change afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/health_power_bar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/health_power_bar.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/ui/GameOverOverlay.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/entities/Cyclop.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/entities/Cyclop.class" afterDir="false" />
@@ -12,6 +14,7 @@
       <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/entities/EnemyManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/entities/EnemyManager.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/entities/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/entities/Player.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/gamestates/Playing.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/gamestates/Playing.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/ui/PauseOverlay.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/ui/PauseOverlay.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/utilz/Constants$Directions.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/utilz/Constants$Directions.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/utilz/Constants$EnemyConstants.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/utilz/Constants$EnemyConstants.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/utilz/Constants$PlayerConstants.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/utilz/Constants$PlayerConstants.class" afterDir="false" />
@@ -26,6 +29,8 @@
       <change beforePath="$PROJECT_DIR$/src/entities/EnemyManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/EnemyManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entities/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gamestates/Playing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gamestates/Playing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/PauseOverlay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/PauseOverlay.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utilz/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utilz/Constants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utilz/LoadSave.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utilz/LoadSave.java" afterDir="false" />
     </list>
@@ -125,7 +130,7 @@
       <workItem from="1681934945332" duration="4174000" />
       <workItem from="1681977479491" duration="182000" />
       <workItem from="1682005701307" duration="858000" />
-      <workItem from="1682089420793" duration="39000000" />
+      <workItem from="1682089420793" duration="39546000" />
     </task>
     <task id="LOCAL-00001" summary="-hitbox 1">
       <created>1680857651565</created>
@@ -288,7 +293,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682163084153</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="-enemies and health">
+      <created>1682186585189</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1682186585189</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -315,6 +327,7 @@
     <MESSAGE value="-pause menu" />
     <MESSAGE value="-enemys" />
     <MESSAGE value="-enemies 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="-enemies 2" />
+    <MESSAGE value="-enemies and health" />
+    <option name="LAST_COMMIT_MESSAGE" value="-enemies and health" />
   </component>
 </project>
