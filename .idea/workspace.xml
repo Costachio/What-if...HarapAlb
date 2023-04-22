@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="93de604e-7f40-4dbd-9b20-acc9adbfe0da" name="Changes" comment="-enemies and health">
+    <list default="true" id="93de604e-7f40-4dbd-9b20-acc9adbfe0da" name="Changes" comment="-clean up">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/entities/Cyclop.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/entities/Cyclop.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/entities/Enemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/entities/Enemy.class" afterDir="false" />
@@ -48,6 +48,9 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/entities/Player.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -123,7 +126,7 @@
       <workItem from="1681934945332" duration="4174000" />
       <workItem from="1681977479491" duration="182000" />
       <workItem from="1682005701307" duration="858000" />
-      <workItem from="1682089420793" duration="43108000" />
+      <workItem from="1682089420793" duration="43491000" />
     </task>
     <task id="LOCAL-00001" summary="-hitbox 1">
       <created>1680857651565</created>
@@ -300,7 +303,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682186597374</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="-clean up">
+      <created>1682190531281</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1682190531281</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -328,6 +338,7 @@
     <MESSAGE value="-enemys" />
     <MESSAGE value="-enemies 2" />
     <MESSAGE value="-enemies and health" />
-    <option name="LAST_COMMIT_MESSAGE" value="-enemies and health" />
+    <MESSAGE value="-clean up" />
+    <option name="LAST_COMMIT_MESSAGE" value="-clean up" />
   </component>
 </project>
