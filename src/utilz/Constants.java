@@ -20,11 +20,12 @@ public class Constants {
         public static final int CYCLOP_WIDTH_DEFAULT = 64;
         public static final int CYCLOP_HEIGHT_DEFAULT = 64;
 
-        public static final int CYCLOP_WIDTH = (int) (CYCLOP_WIDTH_DEFAULT * Game.SCALE*1.5);
-        public static final int CYCLOP_HEIGHT = (int) (CYCLOP_HEIGHT_DEFAULT * Game.SCALE*1.5);
+        public static final int CYCLOP_WIDTH = (int) (CYCLOP_WIDTH_DEFAULT * Game.SCALE * 1.5);
+        public static final int CYCLOP_HEIGHT = (int) (CYCLOP_HEIGHT_DEFAULT * Game.SCALE * 1.5);
 
         public static final int CYCLOP_DRAWOFFSET_X = (int) (30 * Game.SCALE);
         public static final int CYCLOP_DRAWOFFSET_Y = (int) (60 * Game.SCALE);
+
         public static int GetSpriteAmount(int enemy_type, int enemy_state) {
 
             switch (enemy_type) {
@@ -48,6 +49,24 @@ public class Constants {
             return 0;
 
         }
+        		public static int GetMaxHealth(int enemy_type) {
+			switch (enemy_type) {
+			case CYCLOP:
+				return 10;
+			default:
+				return 1;
+			}
+		}
+
+		public static int GetEnemyDmg(int enemy_type) {
+			switch (enemy_type) {
+			case CYCLOP:
+				return 15;
+			default:
+				return 0;
+			}
+
+		}
 
     }
 
@@ -93,9 +112,9 @@ public class Constants {
     public static class PlayerConstants {
         public static final int IDLE = 0;
         public static final int RUNNING = 1;
-        public static final int ATTACK_1 = 2;
-        public static final int ATTACK_2 = 3;
-        public static final int ATTACK_3 = 4;
+        public static final int ATTACK = 2;
+        public static final int ATTACK2 = 3;
+        public static final int ATTACK3 = 4;
         public static final int JUMP = 5;
         public static final int HIT = 6;
         public static final int DEAD = 7;
@@ -105,9 +124,7 @@ public class Constants {
             switch (player_action) {
                 case IDLE:
                     return 13;
-                case ATTACK_1:
-                case ATTACK_2:
-                case ATTACK_3:
+                case ATTACK:
                     return 10;
                 case RUNNING:
                     return 8;

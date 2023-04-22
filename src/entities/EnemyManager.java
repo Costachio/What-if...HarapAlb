@@ -1,6 +1,7 @@
 package entities;
 
 import java.awt.*;
+import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
@@ -22,26 +23,37 @@ public class EnemyManager {
 
     private void addEnemies() {
         cyclops = LoadSave.GetCyclops();
-        System.out.println("size of cyclops: " + cyclops.size());
     }
 
     public void update(int[][] levelData, Player player) {
         for (Cyclop c : cyclops)
-            c.update(levelData, player);
+            if (c.isActive())
+                c.update(levelData, player);
     }
 
     public void draw(Graphics g, int xLvlOffset) {
         drawCyclops(g, xLvlOffset);
-        drawHitbox(g, xLvlOffset);
-
     }
 
     private void drawCyclops(Graphics g, int xLvlOffset) {
-        for (Cyclop c: cyclops)
-            g.drawImage(cyclopArr[c.getEnemyState()][c.getAniIndex()],
-                    (int) c.getHitbox().x - xLvlOffset - CYCLOP_DRAWOFFSET_X,
-                    (int) c.getHitbox().y - CYCLOP_DRAWOFFSET_Y, CYCLOP_WIDTH, CYCLOP_HEIGHT, null);
+        for (Cyclop c : cyclops)
+            if (c.isActive()) {
+                g.drawImage(cyclopArr[c.getEnemyState()][c.getAniIndex()],
+                        (int) c.getHitbox().x - xLvlOffset - CYCLOP_DRAWOFFSET_X + c.flipX(),
+                        (int) c.getHitbox().y - CYCLOP_DRAWOFFSET_Y, CYCLOP_WIDTH * c.flipW(), CYCLOP_HEIGHT, null);
+                c.drawHitbox(g, xLvlOffset);
+                c.drawAttackBox(g, xLvlOffset);
+            }
 
+    }
+
+    public void checkEnemyHit(Rectangle2D.Float attackBox) {
+        for (Cyclop c: cyclops)
+            if (c.isActive())
+                if (attackBox.intersects(c.getHitbox())) {
+                    c.hurt(10);
+                    return;
+                }
     }
 
     private void loadEnemyImgs() {
@@ -50,6 +62,11 @@ public class EnemyManager {
         for (int j = 0; j < cyclopArr.length; j++)
             for (int i = 0; i < cyclopArr[j].length; i++)
                 cyclopArr[j][i] = temp.getSubimage(i * CYCLOP_WIDTH_DEFAULT, j * CYCLOP_HEIGHT_DEFAULT, CYCLOP_WIDTH_DEFAULT, CYCLOP_HEIGHT_DEFAULT);
+    }
+
+    public void resetAllEnemies() {
+        for (Cyclop c: cyclops)
+            c.resetEnemy();
     }
 
     protected void drawHitbox(Graphics g, int xLvlOffset) {
