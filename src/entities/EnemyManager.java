@@ -38,10 +38,10 @@ public class EnemyManager {
     private void drawCyclops(Graphics g, int xLvlOffset) {
         for (Cyclop c : cyclops)
             if (c.isActive()) {
-                g.drawImage(cyclopArr[c.getEnemyState()][c.getAniIndex()],
+                g.drawImage(cyclopArr[c.getState()][c.getAnimationIndex()],
                         (int) c.getHitbox().x - xLvlOffset - CYCLOP_DRAWOFFSET_X + c.flipX(),
                         (int) c.getHitbox().y - CYCLOP_DRAWOFFSET_Y, CYCLOP_WIDTH * c.flipW(), CYCLOP_HEIGHT, null);
-                c.drawHitbox(g, xLvlOffset);
+//                c.drawHitbox(g, xLvlOffset);
                 c.drawAttackBox(g, xLvlOffset);
             }
 
@@ -69,11 +69,5 @@ public class EnemyManager {
             c.resetEnemy();
     }
 
-    protected void drawHitbox(Graphics g, int xLvlOffset) {
-        // For debugging the hitbox
-        g.setColor(Color.PINK);
-        for (Cyclop c: cyclops)
-            g.drawRect((int) c.getHitbox().x - xLvlOffset, (int) c.getHitbox().y, (int) c.getHitbox().width, (int) c.getHitbox().height);
-    }
 
 }

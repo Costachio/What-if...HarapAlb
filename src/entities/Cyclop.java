@@ -21,7 +21,7 @@ public class Cyclop extends Enemy {
 
     public Cyclop(float x, float y) {
         super(x, y, CYCLOP_WIDTH, CYCLOP_HEIGHT, CYCLOP);
-        initHitbox(x, y, (int) (26 * Game.SCALE), (int) (30 * Game.SCALE));
+        initHitbox(26 ,30 );
         initAttackBox();
 
     }
@@ -55,7 +55,7 @@ public class Cyclop extends Enemy {
 
         if (inAir) updateInAir(levelData);
         else {
-            switch (enemyState) {
+            switch (state) {
                 case IDLE:
                     newState(MOVE);
                     break;
@@ -65,13 +65,14 @@ public class Cyclop extends Enemy {
                         if (isPlayerCloseForAttack(player))
                             newState(STOMP);
                     }
+
                     move(levelData);
                     break;
                 case STOMP:
-                    if (aniIndex == 0)
+                    if (animationIndex == 0)
                         attackChecked = false;
 
-                    if (aniIndex == 4 && !attackChecked)
+                    if (animationIndex == 4 && !attackChecked)
                         checkPlayerHit(attackBox, player);
 
                     break;
@@ -79,15 +80,7 @@ public class Cyclop extends Enemy {
                     break;
             }
         }
-
     }
-
-
-    public void drawAttackBox(Graphics g, int xLvlOffset) {
-        g.setColor(Color.red);
-        g.drawRect((int) (attackBox.x - xLvlOffset), (int) attackBox.y, (int) attackBox.width, (int) attackBox.height);
-    }
-
 
     public int flipX() {
         if (walkDir == LEFT)
@@ -101,8 +94,5 @@ public class Cyclop extends Enemy {
             return -1;
         else
             return 1;
-
     }
-
-
 }
