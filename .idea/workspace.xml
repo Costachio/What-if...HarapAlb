@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="93de604e-7f40-4dbd-9b20-acc9adbfe0da" name="Changes" comment=".">
+      <change afterPath="$PROJECT_DIR$/res/completed_sprite.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/entities/Cyclop.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/entities/Cyclop.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/entities/Enemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/entities/Enemy.class" afterDir="false" />
@@ -147,7 +148,7 @@
       <workItem from="1682237588255" duration="2390000" />
       <workItem from="1682331006852" duration="183000" />
       <workItem from="1682402793225" duration="984000" />
-      <workItem from="1682435195539" duration="1819000" />
+      <workItem from="1682435195539" duration="2539000" />
     </task>
     <task id="LOCAL-00001" summary="-hitbox 1">
       <created>1680857651565</created>
@@ -338,7 +339,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682190627361</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary=".">
+      <created>1682439495416</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1682439495416</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
