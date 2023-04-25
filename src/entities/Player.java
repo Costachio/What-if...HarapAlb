@@ -60,7 +60,7 @@ public class Player extends Entity {
         this.currentHealth = maxHealth;
         this.walkSpeed = Game.SCALE * 1.0f;
         loadAnimations();
-        initHitbox(26,28);
+        initHitbox(26, 28);
         initAttackBox();
     }
 
@@ -78,12 +78,16 @@ public class Player extends Entity {
         updateAttackBox();
 
         updatePos();
-        if (attacking)
+        if (attacking) {
             checkAttack();
-        updateAnimationTick();
+            updateAttackAnimationTick();
+        } else {
+            updateAnimationTick();
+        }
         setAnimation();
 
     }
+
 
     private void checkAttack() {
         if (attackChecked || animationIndex != 1)
@@ -115,6 +119,11 @@ public class Player extends Entity {
         drawUI(g);
     }
 
+    protected void drawAttackBox(Graphics g, int lvlOffsetX) {
+        g.setColor(Color.red);
+        g.drawRect((int) attackBox.x - lvlOffsetX, (int) attackBox.y, (int) attackBox.width, (int) attackBox.height);
+
+    }
 
 
     private void drawUI(Graphics g) {
@@ -126,6 +135,20 @@ public class Player extends Entity {
     private void updateAnimationTick() {
         animationTick++;
         if (animationTick >= ANIMATION_SPEED) {
+            animationTick = 0;
+            animationIndex++;
+            if (animationIndex >= GetSpriteAmount(state)) {
+                animationIndex = 0;
+                attacking = false;
+                attackChecked = false;
+            }
+
+        }
+    }
+
+    private void updateAttackAnimationTick() {
+        animationTick++;
+        if (animationTick >= ANIMATION_SPEED_ATTACk) {
             animationTick = 0;
             animationIndex++;
             if (animationIndex >= GetSpriteAmount(state)) {

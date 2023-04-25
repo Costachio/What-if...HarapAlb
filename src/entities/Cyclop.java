@@ -26,9 +26,14 @@ public class Cyclop extends Enemy {
 
     }
 
+    public void drawAttackBox(Graphics g, int xLvlOffset) {
+        g.setColor(Color.red);
+        g.drawRect((int) (attackBox.x - xLvlOffset), (int) attackBox.y, (int) attackBox.width, (int) attackBox.height);
+    }
+
     private void initAttackBox() {
-        attackBox = new Rectangle2D.Float(x, y, (int) (20 * Game.SCALE), (int) (20 * Game.SCALE));
-        attackBoxOffsetX = (int) (Game.SCALE * 10);
+        attackBox = new Rectangle2D.Float(x, y, (int) (82 * Game.SCALE), (int) (19 * Game.SCALE));
+        attackBoxOffsetX = (int) (Game.SCALE * 30);
     }
 
 

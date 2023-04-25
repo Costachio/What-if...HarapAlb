@@ -42,7 +42,7 @@ public class EnemyManager {
                         (int) c.getHitbox().x - xLvlOffset - CYCLOP_DRAWOFFSET_X + c.flipX(),
                         (int) c.getHitbox().y - CYCLOP_DRAWOFFSET_Y, CYCLOP_WIDTH * c.flipW(), CYCLOP_HEIGHT, null);
 //                c.drawHitbox(g, xLvlOffset);
-                c.drawAttackBox(g, xLvlOffset);
+//                c.drawAttackBox(g, xLvlOffset);
             }
 
     }
