@@ -6,6 +6,7 @@ import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
 import gamestates.Playing;
+import levels.Level;
 import utilz.LoadSave;
 import static utilz.Constants.EnemyConstants.*;
 
@@ -15,21 +16,26 @@ public class EnemyManager {
     private BufferedImage[][] cyclopArr;
     private ArrayList<Cyclop> cyclops = new ArrayList<>();
 
-    public EnemyManager(Playing playing) {
-        this.playing = playing;
-        loadEnemyImgs();
-        addEnemies();
-    }
+	public EnemyManager(Playing playing) {
+		this.playing = playing;
+		loadEnemyImgs();
+	}
 
-    private void addEnemies() {
-        cyclops = LoadSave.GetCyclops();
-    }
+	public void loadEnemies(Level level) {
+		cyclops = level.getCyclops();
+	}
 
     public void update(int[][] levelData, Player player) {
+        boolean isAnyActive = false;
         for (Cyclop c : cyclops)
-            if (c.isActive())
+            if (c.isActive()){
                 c.update(levelData, player);
+        isAnyActive = true;
     }
+		if(!isAnyActive)
+            playing.setLevelCompleted(true);
+}
+
 
     public void draw(Graphics g, int xLvlOffset) {
         drawCyclops(g, xLvlOffset);
