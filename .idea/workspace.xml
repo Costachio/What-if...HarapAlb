@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="93de604e-7f40-4dbd-9b20-acc9adbfe0da" name="Changes" comment="-Bear">
-      <change afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/entities/Bear.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/entities/Bear.java" afterDir="false" />
+    <list default="true" id="93de604e-7f40-4dbd-9b20-acc9adbfe0da" name="Changes" comment="-Bear 2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/entities/Enemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/entities/Enemy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/entities/Bear.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/entities/Bear.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/entities/EnemyManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/entities/EnemyManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/levels/Level.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/levels/Level.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/lvls/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/lvls/1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/main/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/main/Game.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/utilz/Constants$Directions.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/utilz/Constants$Directions.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/utilz/Constants$EnemyConstants.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/utilz/Constants$EnemyConstants.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/utilz/Constants$PlayerConstants.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/utilz/Constants$PlayerConstants.class" afterDir="false" />
@@ -20,16 +17,10 @@
       <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/utilz/Constants$UI$URMButtons.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/utilz/Constants$UI$URMButtons.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/utilz/Constants$UI$VolumeButtons.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/utilz/Constants$UI$VolumeButtons.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/utilz/Constants$UI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/utilz/Constants$UI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/utilz/HelpMethods.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/utilz/HelpMethods.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/utilz/LoadSave.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/utilz/LoadSave.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/bear_sprite.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/bear_sprites.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/lvls/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/lvls/1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Enemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/Bear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Bear.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entities/EnemyManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/EnemyManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/levels/Level.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/levels/Level.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utilz/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utilz/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilz/HelpMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utilz/HelpMethods.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilz/LoadSave.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utilz/LoadSave.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,7 +159,7 @@
       <workItem from="1684668786438" duration="5264000" />
       <workItem from="1684674253007" duration="8460000" />
       <workItem from="1684682744779" duration="8246000" />
-      <workItem from="1684701427161" duration="4245000" />
+      <workItem from="1684701427161" duration="4901000" />
     </task>
     <task id="LOCAL-00001" summary="-hitbox 1">
       <created>1680857651565</created>
@@ -428,7 +419,15 @@
       <option name="project" value="LOCAL" />
       <updated>1684705672617</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="-Bear 2">
+      <option name="closed" value="true" />
+      <created>1684705686570</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1684705686570</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -475,7 +474,8 @@
     <MESSAGE value="-database" />
     <MESSAGE value="-leaderboard" />
     <MESSAGE value="-Bear" />
-    <option name="LAST_COMMIT_MESSAGE" value="-Bear" />
+    <MESSAGE value="-Bear 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="-Bear 2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

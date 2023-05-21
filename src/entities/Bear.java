@@ -15,7 +15,7 @@ public class Bear extends Enemy {
     private  int attackBoxOffsetX;
     public Bear(float x, float y) {
         super(x, y, BEAR_WIDTH, BEAR_HEIGHT, BEAR);
-        initHitbox(40, 30);
+        initHitbox(30, 30);
         initAttackBox();
     }
     private void initAttackBox() {
@@ -27,8 +27,8 @@ public class Bear extends Enemy {
         g.drawRect((int) (attackBox.x - xLvlOffset), (int) attackBox.y, (int) attackBox.width, (int) attackBox.height);
     }
 
-    public void update(int[][] lvlData, Player player) {
-        updateBehavior(lvlData, player);
+    public void update(int[][] lvlData) {
+        updateBehavior(lvlData);
         updateAnimationTick();
         updateAttackBox();
     }
@@ -40,7 +40,7 @@ public class Bear extends Enemy {
 
         attackBox.y = hitbox.y + (Game.SCALE * 10);
     }
-    private void updateBehavior(int[][] levelData, Player player) {
+    private void updateBehavior(int[][] levelData) {
         if (firstUpdate)
             firstUpdateCheck(levelData);
 

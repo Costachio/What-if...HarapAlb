@@ -47,7 +47,7 @@ public class EnemyManager {
             }
         for (Bear b : bears)
             if(b.isActive()){
-                b.update(levelData, player);
+                b.update(levelData);
                 isAnyActive=true;
             }
 		if(!isAnyActive)
@@ -68,8 +68,8 @@ public class EnemyManager {
                 g.drawImage(cyclopArr[c.getState()][c.getAnimationIndex()],
                         (int) c.getHitbox().x - xLvlOffset - CYCLOP_DRAWOFFSET_X + c.flipX(),
                         (int) c.getHitbox().y - CYCLOP_DRAWOFFSET_Y, CYCLOP_WIDTH * c.flipW(), CYCLOP_HEIGHT, null);
-                c.drawHitbox(g, xLvlOffset);
-                c.drawAttackBox(g, xLvlOffset);
+//                c.drawHitbox(g, xLvlOffset);
+//                c.drawAttackBox(g, xLvlOffset);
             }
 
     }
@@ -80,8 +80,8 @@ public class EnemyManager {
                 g.drawImage(golemArr[gl.getState()][gl.getAnimationIndex()],
                         (int) gl.getHitbox().x - xLvlOffset - GOLEM_DRAWOFFSET_X + gl.flipX(),
                         (int) gl.getHitbox().y - GOLEM_DRAWOFFSET_Y, GOLEM_WIDTH * gl.flipW(), GOLEM_HEIGHT, null);
-                gl.drawHitbox(g, xLvlOffset);
-                gl.drawAttackBox(g, xLvlOffset);
+//                gl.drawHitbox(g, xLvlOffset);
+//                gl.drawAttackBox(g, xLvlOffset);
             }
 
     }
@@ -92,8 +92,8 @@ public class EnemyManager {
                 g.drawImage(bearArr[b.getState()][b.getAnimationIndex()],
                         (int) b.getHitbox().x - xLvlOffset - BEAR_DRAWOFFSET_X + b.flipX(),
                         (int) b.getHitbox().y - BEAR_DRAWOFFSET_Y, BEAR_WIDTH * b.flipW(), BEAR_HEIGHT, null);
-                b.drawHitbox(g, xLvlOffset);
-                b.drawAttackBox(g, xLvlOffset);
+//                b.drawHitbox(g, xLvlOffset);
+//                b.drawAttackBox(g, xLvlOffset);
             }
 
     }

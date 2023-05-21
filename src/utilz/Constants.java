@@ -47,8 +47,8 @@ public class Constants {
         public static final int BEAR_HEIGHT_DEFAULT = 63;
         public static final int BEAR_WIDTH = (int) (BEAR_WIDTH_DEFAULT * Game.SCALE);
         public static final int BEAR_HEIGHT = (int) (BEAR_HEIGHT_DEFAULT * Game.SCALE);
-        public static final int BEAR_DRAWOFFSET_X = (int) (30 * Game.SCALE);
-        public static final int BEAR_DRAWOFFSET_Y = (int) (20 * Game.SCALE);
+        public static final int BEAR_DRAWOFFSET_X = (int) (13 * Game.SCALE);
+        public static final int BEAR_DRAWOFFSET_Y = (int) (27 * Game.SCALE);
 
         public static int GetSpriteAmount(int enemy_type, int enemy_state) {
 
@@ -96,11 +96,11 @@ public class Constants {
         public static int GetMaxHealth(int enemy_type) {
             switch (enemy_type) {
                 case CYCLOP:
-                    return 70;
+                    return 90;
                 case GOLEM:
                     return 200;
                 case BEAR:
-                    return 100;
+                    return 60;
                 default:
                     return 1;
             }
