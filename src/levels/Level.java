@@ -1,21 +1,21 @@
 package levels;
 
 import entities.Cyclop;
+import entities.Golem;
 import main.Game;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
-import static utilz.HelpMethods.GetCyclops;
-import static utilz.HelpMethods.GetLevelData;
-import static utilz.HelpMethods.GetPlayerSpawn;
+import static utilz.HelpMethods.*;
 
 public class Level {
 
     private BufferedImage img;
     private  int [][] levelData;
-    private ArrayList<Cyclop> cyclops;
+    private ArrayList<Cyclop> cyclops = new ArrayList<>();
+    private ArrayList<Golem> golems = new ArrayList<>();
     private int lvlTilesWide;
     private int maxTilesOffset;
     private int maxLvlOffsetX;
@@ -40,6 +40,7 @@ public class Level {
 
     private void createEnemies() {
         cyclops = GetCyclops(img);
+        golems = GetGolems(img);
     }
 
     private void createLevelData() {
@@ -63,6 +64,9 @@ public class Level {
 
     public ArrayList<Cyclop> getCyclops() {
         return cyclops;
+    }
+    public ArrayList<Golem> getGolems() {
+        return golems;
     }
 
     public Point getPlayerSpawn() {

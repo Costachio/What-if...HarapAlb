@@ -10,15 +10,23 @@ public class Constants {
 
     public static class EnemyConstants {
         public static final int CYCLOP = 0;
+        public static final int GOLEM = 1;
 
         public static final int IDLE = 0;
         public static final int MOVE = 1;
-        public static final int STOMP = 2;
+        public static final int ATTACK = 2;
         public static final int THROW = 3;
         public static final int HIT = 4;
         public static final int HIT_MORE = 5;
         public static final int DEAD = 6;
         public static final int LASER = 8;
+
+
+
+        public static final int GOLEM_HIT = 3;
+        public static final int GOLEM_DEAD = 4;
+
+
 
 
         public static final int CYCLOP_WIDTH_DEFAULT = 64;
@@ -30,6 +38,13 @@ public class Constants {
         public static final int CYCLOP_DRAWOFFSET_X = (int) (30 * Game.SCALE);
         public static final int CYCLOP_DRAWOFFSET_Y = (int) (60 * Game.SCALE);
 
+        public static final int GOLEM_WIDTH_DEFAULT = 192;
+        public static final int GOLEM_HEIGHT_DEFAULT = 128;
+        public static final int GOLEM_WIDTH = (int) (GOLEM_WIDTH_DEFAULT * Game.SCALE);
+        public static final int GOLEM_HEIGHT = (int) (GOLEM_HEIGHT_DEFAULT * Game.SCALE);
+        public static final int GOLEM_DRAWOFFSET_X = (int) (75 * Game.SCALE);
+        public static final int GOLEM_DRAWOFFSET_Y = (int) (70 * Game.SCALE);
+
         public static int GetSpriteAmount(int enemy_type, int enemy_state) {
 
             switch (enemy_type) {
@@ -39,7 +54,7 @@ public class Constants {
                             return 15;
                         case MOVE:
                             return 12;
-                        case STOMP:
+                        case ATTACK:
                             return 7;
                         case HIT:
                             return 3;
@@ -48,29 +63,48 @@ public class Constants {
                         case DEAD:
                             return 9;
                     }
+                case GOLEM:
+                    switch (enemy_state) {
+                        case IDLE:
+                            return 6;
+                        case MOVE:
+                            return 10;
+                        case ATTACK:
+                            return 14;
+                        case GOLEM_HIT:
+                            return 7;
+                        case GOLEM_DEAD:
+                            return 16;
+                    }
+
             }
 
             return 0;
 
         }
-        		public static int GetMaxHealth(int enemy_type) {
-			switch (enemy_type) {
-			case CYCLOP:
-				return 10;
-			default:
-				return 1;
-			}
-		}
 
-		public static int GetEnemyDmg(int enemy_type) {
-			switch (enemy_type) {
-			case CYCLOP:
-				return 15;
-			default:
-				return 0;
-			}
+        public static int GetMaxHealth(int enemy_type) {
+            switch (enemy_type) {
+                case CYCLOP:
+                    return 10;
+                case GOLEM:
+                    return 25;
+                default:
+                    return 1;
+            }
+        }
 
-		}
+        public static int GetEnemyDmg(int enemy_type) {
+            switch (enemy_type) {
+                case CYCLOP:
+                    return 15;
+                case GOLEM:
+                    return 25;
+                default:
+                    return 0;
+            }
+
+        }
 
     }
 

@@ -6,9 +6,11 @@ import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
 import entities.Cyclop;
+import entities.Golem;
 import main.Game;
 
 import static utilz.Constants.EnemyConstants.CYCLOP;
+import static utilz.Constants.EnemyConstants.GOLEM;
 
 public class HelpMethods {
 
@@ -132,6 +134,18 @@ public class HelpMethods {
                 int value = color.getGreen();
                 if (value == CYCLOP)
                     list.add(new Cyclop(i * Game.TILES_SIZE, j * Game.TILES_SIZE));
+            }
+        return list;
+    }
+
+    public static ArrayList<Golem> GetGolems(BufferedImage img) {
+        ArrayList<Golem> list = new ArrayList<>();
+        for (int j = 0; j < img.getHeight(); j++)
+            for (int i = 0; i < img.getWidth(); i++) {
+                Color color = new Color(img.getRGB(i, j));
+                int value = color.getGreen();
+                if (value == GOLEM)
+                    list.add(new Golem(i * Game.TILES_SIZE, j * Game.TILES_SIZE));
             }
         return list;
     }

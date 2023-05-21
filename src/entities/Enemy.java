@@ -96,9 +96,24 @@ public abstract class Enemy extends Entity {
     public void hurt(int amount) {
         currentHealth -= amount;
         if (currentHealth <= 0)
-            newState(DEAD);
-        else
-            newState(HIT);
+            switch (enemyType) {
+                case CYCLOP -> {
+                    newState(DEAD);
+                }
+                case GOLEM -> {
+                    newState(GOLEM_DEAD);
+                }
+            }
+        else {
+            switch (enemyType) {
+                case CYCLOP -> {
+                    newState(HIT);
+                }
+                case GOLEM -> {
+                    newState(GOLEM_HIT);
+                }
+            }
+        }
     }
 
     protected void checkPlayerHit(Rectangle2D.Float attackBox, Player player) {
@@ -115,10 +130,22 @@ public abstract class Enemy extends Entity {
             animationTick = 0;
             animationIndex++;
             if (animationIndex >= GetSpriteAmount(enemyType, state)) {
-                animationIndex = 0;
-                switch (state) {
-                    case STOMP, HIT -> state = IDLE;
-                    case DEAD -> active = false;
+                if (enemyType == CYCLOP || enemyType == GOLEM) {
+                    animationIndex = 0;
+                    switch (enemyType) {
+                        case CYCLOP -> {
+                            switch (state) {
+                                case ATTACK, HIT -> state = IDLE;
+                                case DEAD -> active = false;
+                            }
+                        }
+                        case GOLEM -> {
+                            switch (state) {
+                                case ATTACK, GOLEM_HIT -> state = IDLE;
+                                case GOLEM_DEAD -> active = false;
+                            }
+                        }
+                    }
                 }
             }
         }
