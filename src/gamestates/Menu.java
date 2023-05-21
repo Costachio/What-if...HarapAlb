@@ -57,15 +57,13 @@ public class Menu extends State implements Statemethods {
 
     }
 
-    @Override
-    public void mousePressed(MouseEvent e) {
-        for (MenuButton mb : buttons) {
-            if (isIn(e, mb)) {
-                mb.setMousePressed(true);
-                break;
-            }
-        }
-
+	@Override
+	public void mousePressed(MouseEvent e) {
+		for (MenuButton mb : buttons) {
+			if (isIn(e, mb)) {
+				mb.setMousePressed(true);
+			}
+		}
 
     }
 
@@ -88,18 +86,16 @@ public class Menu extends State implements Statemethods {
         }
     }
 
-    @Override
-    public void mouseMoved(MouseEvent e) {
-        for (MenuButton mb : buttons) {
-            mb.setMouseOver(false);
-        }
-        for (MenuButton mb : buttons) {
-            if (isIn(e, mb)) {
-                mb.setMouseOver(true);
-                break;
-            }
-        }
+	@Override
+	public void mouseMoved(MouseEvent e) {
+		for (MenuButton mb : buttons)
+			mb.setMouseOver(false);
 
+		for (MenuButton mb : buttons)
+			if (isIn(e, mb)) {
+				mb.setMouseOver(true);
+				break;
+			}
 
     }
 

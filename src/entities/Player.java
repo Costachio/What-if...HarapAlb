@@ -1,6 +1,7 @@
 package entities;
 
 import static utilz.Constants.*;
+import static utilz.Constants.EnemyConstants.MOVE;
 import static utilz.Constants.PlayerConstants.*;
 import static utilz.HelpMethods.*;
 import static utilz.Constants.*;
@@ -169,7 +170,7 @@ public class Player extends Entity {
     private void setAnimation() {
         int startAnimation = state;
         if (moving)
-            state = RUNNING;
+            state = MOVE;
         else
             state = IDLE;
         if (inAir) {

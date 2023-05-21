@@ -8,8 +8,11 @@ import java.awt.geom.Rectangle2D;
 import java.awt.geom.Rectangle2D.Float;
 
 import static utilz.Constants.Directions.*;
+import static utilz.HelpMethods.CanMoveHere;
+import static utilz.HelpMethods.IsFloor;
 
 import main.Game;
+import gamestates.Playing;
 
 
 public class Cyclop extends Enemy {
@@ -22,7 +25,7 @@ public class Cyclop extends Enemy {
     public Cyclop(float x, float y) {
         super(x, y, CYCLOP_WIDTH, CYCLOP_HEIGHT, CYCLOP);
         initHitbox(26 ,30 );
-        initAttackBox();
+        initAttackBox(20, 20, 20);
 
     }
 
@@ -37,14 +40,14 @@ public class Cyclop extends Enemy {
     }
 
 
-    public void update(int[][] levelData, Player player) {
-        updateBehavior(levelData, player);
+    public void update(int[][] levelData, Playing playing) {
+        updateBehavior(levelData, playing);
         updateAnimationTick();
-        updateAttackBox();
+        updateAttackBoxFlip();
 
     }
 
-    private void updateAttackBox() {
+    protected void updateAttackBox() {
         if (walkDir == RIGHT)
             attackBox.x = hitbox.x + hitbox.width + (int) (Game.SCALE * 3);
         else if (walkDir == LEFT)
@@ -53,7 +56,7 @@ public class Cyclop extends Enemy {
         attackBox.y = hitbox.y + (Game.SCALE * 10);
     }
 
-    private void updateBehavior(int[][] levelData, Player player) {
+    private void updateBehavior(int[][] levelData, Playing playing) {
         if (firstUpdate)
             firstUpdateCheck(levelData);
 
@@ -65,23 +68,27 @@ public class Cyclop extends Enemy {
                     newState(MOVE);
                     break;
                 case MOVE:
-                    if (canSeePlayer(levelData, player)) {
-                        turnTowardsPlayer(player);
-                        if (isPlayerCloseForAttack(player))
-                            newState(STOMP);
+                    if (canSeePlayer(levelData, playing.getPlayer())) {
+                        turnTowardsPlayer(playing.getPlayer());
+                        if (isPlayerCloseForAttack(playing.getPlayer()))
+                            newState(ATTACK);
                     }
 
                     move(levelData);
                     break;
-                case STOMP:
+                case ATTACK:
                     if (animationIndex == 0)
                         attackChecked = false;
+                   else if (animationIndex == 4 && !attackChecked)
+                        checkPlayerHit(attackBox,playing.getPlayer());
+                    attackMove(levelData, playing);
 
-                    if (animationIndex == 4 && !attackChecked)
-                        checkPlayerHit(attackBox, player);
 
                     break;
                 case HIT:
+                    if (animationIndex <= GetSpriteAmount(enemyType, state) - 2)
+                        pushBack(pushBackDir, levelData, 2f);
+                    updatePushBackDrawOffset();
                     break;
             }
         }
@@ -99,5 +106,22 @@ public class Cyclop extends Enemy {
             return -1;
         else
             return 1;
+    }
+
+
+    protected void attackMove(int[][] lvlData, Playing playing) {
+        float xSpeed = 0;
+
+        if (walkDir == LEFT)
+            xSpeed = -walkSpeed;
+        else
+            xSpeed = walkSpeed;
+
+        if (CanMoveHere(hitbox.x + xSpeed * 4, hitbox.y, hitbox.width, hitbox.height, lvlData))
+            if (IsFloor(hitbox, xSpeed * 4, lvlData)) {
+                hitbox.x += xSpeed * 4;
+                return;
+            }
+        newState(IDLE);
     }
 }
