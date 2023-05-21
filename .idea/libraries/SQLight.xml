@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="SQLight">
+    <CLASSES>
+      <root url="file://$USER_HOME$/IdeaProjects/SQLight" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$USER_HOME$/IdeaProjects/SQLight" />
+    </SOURCES>
+    <jarDirectory url="file://$USER_HOME$/IdeaProjects/SQLight" recursive="false" />
+    <jarDirectory url="file://$USER_HOME$/IdeaProjects/SQLight" recursive="false" type="SOURCES" />
+  </library>
+</component>

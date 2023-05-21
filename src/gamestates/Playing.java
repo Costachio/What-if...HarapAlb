@@ -16,6 +16,8 @@ import ui.LevelCompletedOverlay;
 import ui.PauseOverlay;
 import utilz.LoadSave;
 
+import static utilz.Database.saveScoreToDatabase;
+
 public class Playing extends State implements Statemethods {
     private Player player;
     private LevelManager levelManager;
@@ -109,9 +111,10 @@ public class Playing extends State implements Statemethods {
             g.setColor(new Color(0, 0, 0, 150));
             g.fillRect(0, 0, Game.GAME_WIDTH, Game.GAME_HEIGHT);
             pauseOverlay.draw(g);
-        } else if (gameOver)
+        } else if (gameOver) {
             gameOverOverlay.draw(g);
-        else if (lvlCompleted)
+            saveScoreToDatabase(game.playerName, player.getScore());
+        } else if (lvlCompleted)
             levelCompletedOverlay.draw(g);
     }
 
@@ -188,18 +191,18 @@ public class Playing extends State implements Statemethods {
 
     @Override
     public void mousePressed(MouseEvent e) {
-        if (!gameOver){
+        if (!gameOver) {
             if (paused)
                 pauseOverlay.mousePressed(e);
             else if (lvlCompleted)
                 levelCompletedOverlay.mousePressed(e);
-    }
+        }
 
     }
 
     @Override
     public void mouseReleased(MouseEvent e) {
-        if (!gameOver){
+        if (!gameOver) {
             if (paused)
                 pauseOverlay.mouseReleased(e);
             else if (lvlCompleted)
@@ -209,13 +212,13 @@ public class Playing extends State implements Statemethods {
 
     @Override
     public void mouseMoved(MouseEvent e) {
-        if (!gameOver){
+        if (!gameOver) {
             if (paused)
                 pauseOverlay.mouseMoved(e);
             else if (lvlCompleted)
                 levelCompletedOverlay.mouseMoved(e);
+        }
     }
-}
 
     public void setLevelCompleted(boolean levelCompleted) {
         this.lvlCompleted = levelCompleted;

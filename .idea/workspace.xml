@@ -4,8 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="93de604e-7f40-4dbd-9b20-acc9adbfe0da" name="Changes" comment="-add golem">
-      <change beforePath="$PROJECT_DIR$/src/entities/EnemyManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/EnemyManager.java" afterDir="false" />
+    <list default="true" id="93de604e-7f40-4dbd-9b20-acc9adbfe0da" name="Changes" comment="-add golem 2">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/SQLight.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utilz/Database.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/What if...HarapAlb.iml" beforeDir="false" afterPath="$PROJECT_DIR$/What if...HarapAlb.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/entities/Enemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/entities/Enemy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/entities/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/entities/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/gamestates/Playing.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/gamestates/Playing.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/levels/LevelManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/levels/LevelManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/main/Game$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/main/Game$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/main/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/main/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Enemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gamestates/Playing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gamestates/Playing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/levels/LevelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/levels/LevelManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Game.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,12 +62,15 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;development&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/andrei/Java/What-if...HarapAlb/res/levels&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/andrei/IdeaProjects/SQLight&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.uml&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.importing&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -138,7 +155,9 @@
       <workItem from="1683142964258" duration="181000" />
       <workItem from="1683644883714" duration="4183000" />
       <workItem from="1684250025601" duration="5083000" />
-      <workItem from="1684668786438" duration="3605000" />
+      <workItem from="1684668786438" duration="5264000" />
+      <workItem from="1684674253007" duration="8460000" />
+      <workItem from="1684682744779" duration="2386000" />
     </task>
     <task id="LOCAL-00001" summary="-hitbox 1">
       <created>1680857651565</created>
@@ -358,7 +377,15 @@
       <option name="project" value="LOCAL" />
       <updated>1684672051025</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="-add golem 2">
+      <option name="closed" value="true" />
+      <created>1684672562221</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1684672562221</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -401,7 +428,19 @@
     <MESSAGE value="-clean up" />
     <MESSAGE value="." />
     <MESSAGE value="-add golem" />
-    <option name="LAST_COMMIT_MESSAGE" value="-add golem" />
+    <MESSAGE value="-add golem 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="-add golem 2" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/levels/LevelManager.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -79,12 +79,31 @@ public abstract class Enemy extends Entity {
 
     protected boolean isPlayerInRange(Player player) {
         int absValue = (int) Math.abs(player.hitbox.x - hitbox.x);
-        return absValue <= attackDistance * 5;
+        switch (enemyType) {
+            case CYCLOP -> {
+                return absValue <= attackDistance * 5;
+            }
+            case GOLEM -> {
+                return absValue <= attackDistance * 10;
+
+            }
+        }
+        return  false;
     }
+
 
     protected boolean isPlayerCloseForAttack(Player player) {
         int absValue = (int) Math.abs(player.hitbox.x - hitbox.x);
-        return absValue <= attackDistance;
+        switch (enemyType) {
+            case CYCLOP -> {
+                return absValue <= attackDistance;
+            }
+            case GOLEM -> {
+                return absValue <= attackDistance * 2;
+
+            }
+        }
+        return  false;
     }
 
     protected void newState(int state) {

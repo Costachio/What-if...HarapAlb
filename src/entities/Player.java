@@ -47,6 +47,7 @@ public class Player extends Entity {
 
     private int flipX = 0;
     private int flipW = 1;
+    private int score = 0;
 
     private boolean attackChecked;
     private Playing playing;
@@ -276,6 +277,14 @@ public class Player extends Entity {
         statusBarImg = LoadSave.GetSpriteAtlas(LoadSave.STATUS_BAR);
     }
 
+    public int getScore() {
+        return score;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
+    }
+
     public void loadLevelData(int[][] levelData) {
         this.levelData = levelData;
         if (!IsEntityOnFloor(hitbox, levelData))
@@ -318,7 +327,6 @@ public class Player extends Entity {
         moving = false;
         state = IDLE;
         currentHealth = maxHealth;
-
         hitbox.x = x;
         hitbox.y = y;
 
@@ -326,4 +334,7 @@ public class Player extends Entity {
             inAir = true;
     }
 
+    public void updateScore(int bonus) {
+        this.score+=bonus;
+    }
 }

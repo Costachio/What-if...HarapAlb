@@ -8,6 +8,8 @@ import gamestates.Gamestate;
 import main.Game;
 import utilz.LoadSave;
 
+import static utilz.Database.saveScoreToDatabase;
+
 public class LevelManager {
 
 	private Game game;
@@ -24,6 +26,8 @@ public class LevelManager {
 
 	public void loadNextLevel() {
 		lvlIndex++;
+		game.getPlaying().getPlayer().updateScore(100);
+		saveScoreToDatabase(game.playerName,game.getPlaying().getPlayer().getScore());
 		if (lvlIndex >= levels.size()) {
 			lvlIndex = 0;
 			System.out.println("No more levels! Game Completed!");

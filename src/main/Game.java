@@ -3,9 +3,13 @@ package main;
 import gamestates.Gamestate;
 import gamestates.Menu;
 import gamestates.Playing;
-import utilz.LoadSave;
+import utilz.Database;
 
+
+import javax.swing.*;
 import java.awt.*;
+
+import static utilz.Database.saveScoreToDatabase;
 
 public class Game implements Runnable {
 
@@ -26,6 +30,9 @@ public class Game implements Runnable {
     public final static int TILES_SIZE = (int) (TILES_DEFAULT_SIZE * SCALE);
     public final static int GAME_WIDTH = TILES_SIZE * TILES_IN_WIDTH;
     public final static int GAME_HEIGHT = TILES_SIZE * TILES_IN_HEIGHT;
+    public String playerName;
+    boolean firstTimePlaying = true;
+
 
     public Game() {
         initClasses();
@@ -34,8 +41,16 @@ public class Game implements Runnable {
         gameWindow = new GameWindow(gamePanel);
         gamePanel.setFocusable(true);
         gamePanel.requestFocus();
-
         startGameLoop();
+    }
+
+    public void showNameInputDialog() {
+        String temp = JOptionPane.showInputDialog("Introdu numele tău:");
+
+        if (temp != null && !temp.isEmpty()) {
+            playerName = temp;
+
+        }
     }
 
     private void initClasses() {
@@ -56,11 +71,14 @@ public class Game implements Runnable {
                 menu.update();
                 break;
             case PLAYING:
+                if(playerName == null)
+                    showNameInputDialog();
                 playing.update();
                 break;
             case OPTIONS:
             case QUIT:
             default:
+                saveScoreToDatabase(playerName,playing.getPlayer().getScore());
                 System.exit(0);
                 break;
         }
@@ -123,6 +141,7 @@ public class Game implements Runnable {
             if (System.currentTimeMillis() - lastCheck >= 1000) {
                 lastCheck = System.currentTimeMillis();
                 System.out.println("FPS: " + frames + " | UPS: " + updates);
+                System.out.println("Score:" + playing.getPlayer().getScore());
                 frames = 0;
                 updates = 0;
             }
@@ -144,4 +163,6 @@ public class Game implements Runnable {
     public Playing getPlaying() {
         return playing;
     }
+
+
 }
