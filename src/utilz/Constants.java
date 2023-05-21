@@ -43,7 +43,7 @@ public class Constants {
         public static final int GOLEM_WIDTH = (int) (GOLEM_WIDTH_DEFAULT * Game.SCALE);
         public static final int GOLEM_HEIGHT = (int) (GOLEM_HEIGHT_DEFAULT * Game.SCALE);
         public static final int GOLEM_DRAWOFFSET_X = (int) (75 * Game.SCALE);
-        public static final int GOLEM_DRAWOFFSET_Y = (int) (70 * Game.SCALE);
+        public static final int GOLEM_DRAWOFFSET_Y = (int) (75 * Game.SCALE);
 
         public static int GetSpriteAmount(int enemy_type, int enemy_state) {
 

@@ -4,32 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="93de604e-7f40-4dbd-9b20-acc9adbfe0da" name="Changes" comment="-multiple levels 2">
-      <change afterPath="$PROJECT_DIR$/res/golem_sprites.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/entities/Golem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/entities/Enemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/entities/Enemy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/entities/EnemyManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/entities/EnemyManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/levels/Level.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/levels/Level.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/lvls/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/lvls/1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/utilz/Constants$Directions.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/utilz/Constants$Directions.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/utilz/Constants$EnemyConstants.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/utilz/Constants$EnemyConstants.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/utilz/Constants$PlayerConstants.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/utilz/Constants$PlayerConstants.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/utilz/Constants$UI$Buttons.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/utilz/Constants$UI$Buttons.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/utilz/Constants$UI$PauseButtons.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/utilz/Constants$UI$PauseButtons.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/utilz/Constants$UI$URMButtons.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/utilz/Constants$UI$URMButtons.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/utilz/Constants$UI$VolumeButtons.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/utilz/Constants$UI$VolumeButtons.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/utilz/Constants$UI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/utilz/Constants$UI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/utilz/HelpMethods.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/utilz/HelpMethods.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/utilz/LoadSave.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/utilz/LoadSave.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/lvls/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/lvls/1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/Cyclop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Cyclop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Enemy.java" afterDir="false" />
+    <list default="true" id="93de604e-7f40-4dbd-9b20-acc9adbfe0da" name="Changes" comment="-add golem">
       <change beforePath="$PROJECT_DIR$/src/entities/EnemyManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/EnemyManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/levels/Level.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/levels/Level.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilz/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utilz/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilz/HelpMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utilz/HelpMethods.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilz/LoadSave.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utilz/LoadSave.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,7 +138,7 @@
       <workItem from="1683142964258" duration="181000" />
       <workItem from="1683644883714" duration="4183000" />
       <workItem from="1684250025601" duration="5083000" />
-      <workItem from="1684668786438" duration="3073000" />
+      <workItem from="1684668786438" duration="3605000" />
     </task>
     <task id="LOCAL-00001" summary="-hitbox 1">
       <created>1680857651565</created>
@@ -374,7 +350,15 @@
       <option name="project" value="LOCAL" />
       <updated>1683645030612</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="-add golem">
+      <option name="closed" value="true" />
+      <created>1684672051025</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1684672051025</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -416,7 +400,8 @@
     <MESSAGE value="-enemies and health" />
     <MESSAGE value="-clean up" />
     <MESSAGE value="." />
-    <option name="LAST_COMMIT_MESSAGE" value="." />
+    <MESSAGE value="-add golem" />
+    <option name="LAST_COMMIT_MESSAGE" value="-add golem" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -67,7 +67,7 @@ public class EnemyManager {
 
     private void drawGolems(Graphics g, int xLvlOffset) {
         for (Golem gl : golems)
-            if (gl.isActive() && gl.getState()!=GOLEM_DEAD)  {
+            if (gl.isActive())  {
                 g.drawImage(golemArr[gl.getState()][gl.getAnimationIndex()],
                         (int) gl.getHitbox().x - xLvlOffset - GOLEM_DRAWOFFSET_X + gl.flipX(),
                         (int) gl.getHitbox().y - GOLEM_DRAWOFFSET_Y, GOLEM_WIDTH * gl.flipW(), GOLEM_HEIGHT, null);
