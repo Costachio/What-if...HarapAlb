@@ -1,6 +1,7 @@
 package main;
 
 import gamestates.Gamestate;
+import gamestates.Leaderboard;
 import gamestates.Menu;
 import gamestates.Playing;
 import utilz.Database;
@@ -8,6 +9,7 @@ import utilz.Database;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseListener;
 
 import static utilz.Database.saveScoreToDatabase;
 
@@ -21,6 +23,7 @@ public class Game implements Runnable {
 
     private Playing playing;
     private Menu menu;
+    private Leaderboard leaderboard;
 
 
     public final static int TILES_DEFAULT_SIZE = 32;
@@ -56,6 +59,7 @@ public class Game implements Runnable {
     private void initClasses() {
         menu = new Menu(this);
         playing = new Playing(this);
+        leaderboard = new Leaderboard(this);
 
     }
 
@@ -75,7 +79,10 @@ public class Game implements Runnable {
                     showNameInputDialog();
                 playing.update();
                 break;
-            case OPTIONS:
+            case LEADERBOARD:
+                leaderboard.update();
+
+                break;
             case QUIT:
             default:
                 saveScoreToDatabase(playerName,playing.getPlayer().getScore());
@@ -94,6 +101,8 @@ public class Game implements Runnable {
             case PLAYING:
                 playing.draw(g);
                 break;
+            case LEADERBOARD:
+                leaderboard.draw(g);
             default:
                 break;
         }
@@ -165,4 +174,7 @@ public class Game implements Runnable {
     }
 
 
+    public Leaderboard getLeaderboard() {
+        return leaderboard;
+    }
 }

@@ -74,7 +74,6 @@ public class VolumeButton extends PauseButton {
 
     public void setMouseOver(boolean mouseOver) {
         this.mouseOver = mouseOver;
-        System.out.println("OVER");
     }
 
     public boolean isMousePressed() {

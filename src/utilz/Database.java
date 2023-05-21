@@ -49,6 +49,28 @@ public class Database {
         }
 
     }
+
+    public static String bestScore(){
+        String bestScoreString = "";
+        try {
+            Connection c = connectDB();
+            Statement statement = c.createStatement();
+            String query = "SELECT Name, MAX(Score) AS BestScore FROM LEADERBOARD";
+            ResultSet resultSet = statement.executeQuery(query);
+
+            if (resultSet.next()) {
+                String playerName = resultSet.getString("Name");
+                int BestScore = resultSet.getInt("BestScore");
+                bestScoreString = playerName + ": " + BestScore;
+            }
+
+            resultSet.close();
+            statement.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return bestScoreString;
+    }
 }
 
 
