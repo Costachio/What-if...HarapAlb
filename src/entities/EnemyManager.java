@@ -16,8 +16,10 @@ public class EnemyManager {
     private Playing playing;
     private BufferedImage[][] cyclopArr;
     private BufferedImage[][] golemArr;
+    private BufferedImage[][] bearArr;
     private ArrayList<Cyclop> cyclops = new ArrayList<>();
     private ArrayList<Golem> golems = new ArrayList<>();
+    private ArrayList<Bear> bears = new ArrayList<>();
 
 	public EnemyManager(Playing playing) {
 		this.playing = playing;
@@ -27,6 +29,7 @@ public class EnemyManager {
 	public void loadEnemies(Level level) {
 		cyclops = level.getCyclops();
         golems=level.getGolems();
+        bears=level.getBears();
 	}
 
     public void update(int[][] levelData, Player player) {
@@ -42,6 +45,11 @@ public class EnemyManager {
                 g.update(levelData, player);
                 isAnyActive=true;
             }
+        for (Bear b : bears)
+            if(b.isActive()){
+                b.update(levelData, player);
+                isAnyActive=true;
+            }
 		if(!isAnyActive)
             playing.setLevelCompleted(true);
 
@@ -51,6 +59,7 @@ public class EnemyManager {
     public void draw(Graphics g, int xLvlOffset) {
         drawCyclops(g, xLvlOffset);
         drawGolems(g, xLvlOffset);
+        drawBears(g, xLvlOffset);
     }
 
     private void drawCyclops(Graphics g, int xLvlOffset) {
@@ -77,17 +86,36 @@ public class EnemyManager {
 
     }
 
+    private void drawBears(Graphics g, int xLvlOffset) {
+        for (Bear b : bears)
+            if (b.isActive())  {
+                g.drawImage(bearArr[b.getState()][b.getAnimationIndex()],
+                        (int) b.getHitbox().x - xLvlOffset - BEAR_DRAWOFFSET_X + b.flipX(),
+                        (int) b.getHitbox().y - BEAR_DRAWOFFSET_Y, BEAR_WIDTH * b.flipW(), BEAR_HEIGHT, null);
+                b.drawHitbox(g, xLvlOffset);
+                b.drawAttackBox(g, xLvlOffset);
+            }
+
+    }
+
     public void checkEnemyHit(Rectangle2D.Float attackBox) {
         for (Cyclop c: cyclops)
             if (c.isActive())
                 if (attackBox.intersects(c.getHitbox())) {
-                    c.hurt(10);
+                    c.hurt(20);
                     return;
                 }
         for (Golem g : golems)
             if (g.isActive()) {
                     if (attackBox.intersects(g.getHitbox())) {
-                        g.hurt(10);
+                        g.hurt(20);
+                        return;
+                    }
+            }
+        for (Bear b : bears)
+            if (b.isActive()) {
+                    if (attackBox.intersects(b.getHitbox())) {
+                        b.hurt(20);
                         return;
                     }
             }
@@ -105,6 +133,11 @@ public class EnemyManager {
         for (int j = 0; j < golemArr.length; j++)
             for (int i = 0; i < golemArr[j].length; i++)
                 golemArr[j][i] = temp2.getSubimage(i * GOLEM_WIDTH_DEFAULT, j * GOLEM_HEIGHT_DEFAULT, GOLEM_WIDTH_DEFAULT, GOLEM_HEIGHT_DEFAULT);
+        bearArr = new BufferedImage[1][4];
+        BufferedImage temp3 = LoadSave.GetSpriteAtlas(LoadSave.BEAR_ATLAS);
+        for (int j = 0; j < bearArr.length; j++)
+            for (int i = 0; i < bearArr[j].length; i++)
+                bearArr[j][i] = temp3.getSubimage(i * BEAR_WIDTH_DEFAULT, j * BEAR_HEIGHT_DEFAULT, BEAR_WIDTH_DEFAULT, BEAR_HEIGHT_DEFAULT);
     }
 
     public void resetAllEnemies() {
@@ -112,6 +145,8 @@ public class EnemyManager {
             c.resetEnemy();
         for (Golem g: golems)
             g.resetEnemy();
+        for (Bear b : bears)
+            b.resetEnemy();
     }
 
 

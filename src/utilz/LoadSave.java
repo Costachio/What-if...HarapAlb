@@ -13,6 +13,7 @@ public class LoadSave {
     public static final String PLAYER_ATLAS = "player_sprites.png";
     public static final String CYCLOP_SPRITE = "cyclop_sprites.png";
     public static final String GOLEM_ATLAS = "golem_sprites.png";
+    public static final String BEAR_ATLAS = "bear_sprites.png";
     public static final String LEVEL_ATLAS = "blocuri3.png";
     public static final String LEVEL_ONE_DATA = "levels/1.png";
     public static final String MENU_BUTTONS = "button_atlas.png";

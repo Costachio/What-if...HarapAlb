@@ -5,12 +5,12 @@ import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
+import entities.Bear;
 import entities.Cyclop;
 import entities.Golem;
 import main.Game;
 
-import static utilz.Constants.EnemyConstants.CYCLOP;
-import static utilz.Constants.EnemyConstants.GOLEM;
+import static utilz.Constants.EnemyConstants.*;
 
 public class HelpMethods {
 
@@ -146,6 +146,17 @@ public class HelpMethods {
                 int value = color.getGreen();
                 if (value == GOLEM)
                     list.add(new Golem(i * Game.TILES_SIZE, j * Game.TILES_SIZE));
+            }
+        return list;
+    }
+    public static ArrayList<Bear> GetBears(BufferedImage img) {
+        ArrayList<Bear> list = new ArrayList<>();
+        for (int j = 0; j < img.getHeight(); j++)
+            for (int i = 0; i < img.getWidth(); i++) {
+                Color color = new Color(img.getRGB(i, j));
+                int value = color.getGreen();
+                if (value == BEAR)
+                    list.add(new Bear(i * Game.TILES_SIZE, j * Game.TILES_SIZE));
             }
         return list;
     }

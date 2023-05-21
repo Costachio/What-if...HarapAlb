@@ -11,6 +11,7 @@ public class Constants {
     public static class EnemyConstants {
         public static final int CYCLOP = 0;
         public static final int GOLEM = 1;
+        public static final int BEAR = 2;
 
         public static final int IDLE = 0;
         public static final int MOVE = 1;
@@ -22,11 +23,9 @@ public class Constants {
         public static final int LASER = 8;
 
 
-
         public static final int GOLEM_HIT = 3;
         public static final int GOLEM_DEAD = 4;
-
-
+        public static final int BEAR_MOVE = 0;
 
 
         public static final int CYCLOP_WIDTH_DEFAULT = 64;
@@ -44,6 +43,12 @@ public class Constants {
         public static final int GOLEM_HEIGHT = (int) (GOLEM_HEIGHT_DEFAULT * Game.SCALE);
         public static final int GOLEM_DRAWOFFSET_X = (int) (75 * Game.SCALE);
         public static final int GOLEM_DRAWOFFSET_Y = (int) (75 * Game.SCALE);
+        public static final int BEAR_WIDTH_DEFAULT = 54;
+        public static final int BEAR_HEIGHT_DEFAULT = 63;
+        public static final int BEAR_WIDTH = (int) (BEAR_WIDTH_DEFAULT * Game.SCALE);
+        public static final int BEAR_HEIGHT = (int) (BEAR_HEIGHT_DEFAULT * Game.SCALE);
+        public static final int BEAR_DRAWOFFSET_X = (int) (30 * Game.SCALE);
+        public static final int BEAR_DRAWOFFSET_Y = (int) (20 * Game.SCALE);
 
         public static int GetSpriteAmount(int enemy_type, int enemy_state) {
 
@@ -76,6 +81,11 @@ public class Constants {
                         case GOLEM_DEAD:
                             return 16;
                     }
+                case BEAR:
+                    switch (enemy_state) {
+                        case BEAR_MOVE:
+                            return 4;
+                    }
 
             }
 
@@ -86,9 +96,11 @@ public class Constants {
         public static int GetMaxHealth(int enemy_type) {
             switch (enemy_type) {
                 case CYCLOP:
-                    return 10;
+                    return 70;
                 case GOLEM:
-                    return 25;
+                    return 200;
+                case BEAR:
+                    return 100;
                 default:
                     return 1;
             }
@@ -97,9 +109,9 @@ public class Constants {
         public static int GetEnemyDmg(int enemy_type) {
             switch (enemy_type) {
                 case CYCLOP:
-                    return 15;
+                    return 30;
                 case GOLEM:
-                    return 25;
+                    return 90;
                 default:
                     return 0;
             }

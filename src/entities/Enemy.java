@@ -11,13 +11,13 @@ import static utilz.Constants.*;
 import main.Game;
 
 public abstract class Enemy extends Entity {
-	protected int enemyType;
-	protected boolean firstUpdate = true;
-	protected int walkDir = LEFT;
-	protected int tileY;
-	protected float attackDistance = Game.TILES_SIZE;
-	protected boolean active = true;
-	protected boolean attackChecked;
+    protected int enemyType;
+    protected boolean firstUpdate = true;
+    protected int walkDir = LEFT;
+    protected int tileY;
+    protected float attackDistance = Game.TILES_SIZE;
+    protected boolean active = true;
+    protected boolean attackChecked;
 
     public Enemy(float x, float y, int width, int height, int enemyType) {
         super(x, y, width, height);
@@ -27,6 +27,7 @@ public abstract class Enemy extends Entity {
         currentHealth = maxHealth;
         walkSpeed = Game.SCALE * 0.35f;
     }
+
     protected void firstUpdateCheck(int[][] levelData) {
         if (!IsEntityOnFloor(hitbox, levelData))
             inAir = true;
@@ -43,6 +44,7 @@ public abstract class Enemy extends Entity {
             tileY = (int) (hitbox.y / Game.TILES_SIZE);
         }
     }
+
     protected void move(int[][] levelData) {
         float xSpeed = 0;
 
@@ -80,7 +82,7 @@ public abstract class Enemy extends Entity {
     protected boolean isPlayerInRange(Player player) {
         int absValue = (int) Math.abs(player.hitbox.x - hitbox.x);
         switch (enemyType) {
-            case CYCLOP -> {
+            case CYCLOP, BEAR -> {
                 return absValue <= attackDistance * 5;
             }
             case GOLEM -> {
@@ -88,14 +90,14 @@ public abstract class Enemy extends Entity {
 
             }
         }
-        return  false;
+        return false;
     }
 
 
     protected boolean isPlayerCloseForAttack(Player player) {
         int absValue = (int) Math.abs(player.hitbox.x - hitbox.x);
         switch (enemyType) {
-            case CYCLOP -> {
+            case CYCLOP, BEAR -> {
                 return absValue <= attackDistance;
             }
             case GOLEM -> {
@@ -103,7 +105,7 @@ public abstract class Enemy extends Entity {
 
             }
         }
-        return  false;
+        return false;
     }
 
     protected void newState(int state) {
@@ -121,6 +123,9 @@ public abstract class Enemy extends Entity {
                 }
                 case GOLEM -> {
                     newState(GOLEM_DEAD);
+                }
+                case BEAR -> {
+                    this.active = false;
                 }
             }
         else {
@@ -149,20 +154,19 @@ public abstract class Enemy extends Entity {
             animationTick = 0;
             animationIndex++;
             if (animationIndex >= GetSpriteAmount(enemyType, state)) {
-                if (enemyType == CYCLOP || enemyType == GOLEM) {
-                    animationIndex = 0;
-                    switch (enemyType) {
-                        case CYCLOP -> {
-                            switch (state) {
-                                case ATTACK, HIT -> state = IDLE;
-                                case DEAD -> active = false;
-                            }
+                animationIndex = 0;
+                switch (enemyType) {
+                    case CYCLOP -> {
+                        switch (state) {
+                            case ATTACK, HIT -> state = IDLE;
+                            case DEAD -> active = false;
                         }
-                        case GOLEM -> {
-                            switch (state) {
-                                case ATTACK, GOLEM_HIT -> state = IDLE;
-                                case GOLEM_DEAD -> active = false;
-                            }
+                    }
+                    case GOLEM -> {
+                        switch (state) {
+                            case ATTACK, GOLEM_HIT -> state = IDLE;
+                            case GOLEM_DEAD -> active = false;
+
                         }
                     }
                 }
@@ -170,26 +174,27 @@ public abstract class Enemy extends Entity {
         }
     }
 
-	protected void changeWalkDir() {
-		if (walkDir == LEFT)
-			walkDir = RIGHT;
-		else
-			walkDir = LEFT;
-	}
 
-	public void resetEnemy() {
-		hitbox.x = x;
-		hitbox.y = y;
-		firstUpdate = true;
-		currentHealth = maxHealth;
-		newState(IDLE);
-		active = true;
-		airSpeed = 0;
-	}
+    protected void changeWalkDir() {
+        if (walkDir == LEFT)
+            walkDir = RIGHT;
+        else
+            walkDir = LEFT;
+    }
+
+    public void resetEnemy() {
+        hitbox.x = x;
+        hitbox.y = y;
+        firstUpdate = true;
+        currentHealth = maxHealth;
+        newState(IDLE);
+        active = true;
+        airSpeed = 0;
+    }
 
 
-	public boolean isActive() {
-		return active;
-	}
+    public boolean isActive() {
+        return active;
+    }
 
 }

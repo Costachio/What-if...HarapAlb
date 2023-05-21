@@ -1,5 +1,6 @@
 package levels;
 
+import entities.Bear;
 import entities.Cyclop;
 import entities.Golem;
 import main.Game;
@@ -16,6 +17,7 @@ public class Level {
     private  int [][] levelData;
     private ArrayList<Cyclop> cyclops = new ArrayList<>();
     private ArrayList<Golem> golems = new ArrayList<>();
+    private ArrayList<Bear> bears = new ArrayList<>();
     private int lvlTilesWide;
     private int maxTilesOffset;
     private int maxLvlOffsetX;
@@ -41,6 +43,7 @@ public class Level {
     private void createEnemies() {
         cyclops = GetCyclops(img);
         golems = GetGolems(img);
+        bears = GetBears(img);
     }
 
     private void createLevelData() {
@@ -68,8 +71,13 @@ public class Level {
     public ArrayList<Golem> getGolems() {
         return golems;
     }
+    public ArrayList<Bear> getBears() {
+        return bears;
+    }
 
     public Point getPlayerSpawn() {
         return playerSpawn;
     }
+
+
 }
