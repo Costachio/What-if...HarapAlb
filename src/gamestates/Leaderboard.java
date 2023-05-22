@@ -47,9 +47,13 @@ public class Leaderboard extends State implements Statemethods {
         menuButton.draw(g);
         g.setColor(Color.WHITE);
         g.setFont(new Font("arial",Font.BOLD,50));
-        g.drawString("LEADERBOARD",Game.GAME_WIDTH/2 -200,200);
-        String champ=bestScore();
-        g.drawString(champ,Game.GAME_WIDTH/2-170,Game.GAME_HEIGHT/2);
+        g.drawString("LEADERBOARD",Game.GAME_WIDTH/2 -200,100);
+        String champ[]=bestScore();
+        g.setColor(Color.BLACK);
+        g.drawString(champ[0],Game.GAME_WIDTH/2-champ[0].length()*11-15,Game.GAME_HEIGHT/2-100);
+        g.setColor(Color.RED);
+        g.drawString(champ[1],Game.GAME_WIDTH/2-champ[1].length()*11-15,Game.GAME_HEIGHT/2);
+        g.drawString(champ[2],Game.GAME_WIDTH/2-champ[2].length()*11-15,Game.GAME_HEIGHT/2+100);
     }
 
     @Override

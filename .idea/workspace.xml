@@ -4,13 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="93de604e-7f40-4dbd-9b20-acc9adbfe0da" name="Changes" comment="-nivel 1 2">
+    <list default="true" id="93de604e-7f40-4dbd-9b20-acc9adbfe0da" name="Changes" comment="final">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/database.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/button_atlas.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/button_atlas.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database.sqbpro" beforeDir="false" afterPath="$PROJECT_DIR$/database.sqbpro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/button_atlas.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/button_atlas.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/gamestates/Leaderboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/gamestates/Leaderboard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/levels/LevelManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/levels/LevelManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/utilz/Database.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/utilz/Database.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gamestates/Leaderboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gamestates/Leaderboard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/levels/LevelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/levels/LevelManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utilz/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utilz/Database.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,7 +155,7 @@
       <workItem from="1684701427161" duration="7532000" />
       <workItem from="1684743258629" duration="318000" />
       <workItem from="1684777967459" duration="570000" />
-      <workItem from="1684783286832" duration="4127000" />
+      <workItem from="1684783286832" duration="4893000" />
     </task>
     <task id="LOCAL-00001" summary="-hitbox 1">
       <created>1680857651565</created>
@@ -484,7 +487,15 @@
       <option name="project" value="LOCAL" />
       <updated>1684783600230</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="final">
+      <option name="closed" value="true" />
+      <created>1684787599246</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1684787599246</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -535,7 +546,8 @@
     <MESSAGE value="-Bear 3" />
     <MESSAGE value="-top" />
     <MESSAGE value="-nivel 1 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="-nivel 1 2" />
+    <MESSAGE value="final" />
+    <option name="LAST_COMMIT_MESSAGE" value="final" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

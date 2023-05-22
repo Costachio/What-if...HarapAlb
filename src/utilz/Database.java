@@ -13,7 +13,6 @@ public class Database {
             System.err.println( e.getClass().getName() + ": " + e.getMessage() );
             System.exit(0);
         }
-        System.out.println("Opened database successfully");
         return  c;
 
     }
@@ -42,7 +41,14 @@ public class Database {
 
             resultSet.close();
             statement.close();
-            c.close();
+            try {
+                if (c != null) {
+                    c.close();
+                }
+            } catch (SQLException e) {
+                System.err.println("Failed to close the database connection.");
+                e.printStackTrace();
+            }
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -50,18 +56,21 @@ public class Database {
 
     }
 
-    public static String bestScore(){
-        String bestScoreString = "";
+    public static String[] bestScore() {
+        String[] bestScores = new String[3];
         try {
             Connection c = connectDB();
             Statement statement = c.createStatement();
-            String query = "SELECT Name, MAX(Score) AS BestScore FROM LEADERBOARD";
+            String query = "SELECT Name, Score FROM LEADERBOARD ORDER BY Score DESC LIMIT 3";
             ResultSet resultSet = statement.executeQuery(query);
 
-            if (resultSet.next()) {
+            int index = 0;
+            while (resultSet.next() && index < 3) {
                 String playerName = resultSet.getString("Name");
-                int BestScore = resultSet.getInt("BestScore");
-                bestScoreString = playerName + ": " + BestScore;
+                int score = resultSet.getInt("Score");
+                String scoreEntry = playerName + ": " + score;
+                bestScores[index] = scoreEntry;
+                index++;
             }
 
             resultSet.close();
@@ -69,7 +78,7 @@ public class Database {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return bestScoreString;
+        return bestScores;
     }
 }
 
