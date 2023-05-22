@@ -75,8 +75,8 @@ public class Game implements Runnable {
                 menu.update();
                 break;
             case PLAYING:
-                if(playerName == null)
-                    showNameInputDialog();
+//                if(playerName == null)
+//                    showNameInputDialog();
                 playing.update();
                 break;
             case LEADERBOARD:
