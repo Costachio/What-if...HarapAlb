@@ -43,7 +43,7 @@ public class Leaderboard extends State implements Statemethods {
     public void draw(Graphics g) {
         g.drawImage(backgroundImgForest, 0, 0, Game.GAME_WIDTH, Game.GAME_HEIGHT, null);
 
-//        g.drawImage(img, bgX, bgY, bgW, bgH, null);
+
         menuButton.draw(g);
         g.setColor(Color.WHITE);
         g.setFont(new Font("arial",Font.BOLD,50));

@@ -7,10 +7,10 @@
     <list default="true" id="93de604e-7f40-4dbd-9b20-acc9adbfe0da" name="Changes" comment="-nivel 1 2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/database.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/levels/LevelManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/levels/LevelManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/What if...HarapAlb/utilz/Constants$EnemyConstants.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/What if...HarapAlb/utilz/Constants$EnemyConstants.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/button_atlas.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/button_atlas.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gamestates/Leaderboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gamestates/Leaderboard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/levels/LevelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/levels/LevelManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utilz/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utilz/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Game.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,25 +46,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;development&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/andrei/IdeaProjects/SQLight&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.importing&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "development",
+    "last_opened_file_path": "/home/andrei/IdeaProjects/SQLight",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settings.ide.settings.uml",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/res/levels" />
@@ -152,7 +152,7 @@
       <workItem from="1684701427161" duration="7532000" />
       <workItem from="1684743258629" duration="318000" />
       <workItem from="1684777967459" duration="570000" />
-      <workItem from="1684783286832" duration="307000" />
+      <workItem from="1684783286832" duration="4127000" />
     </task>
     <task id="LOCAL-00001" summary="-hitbox 1">
       <created>1680857651565</created>
@@ -476,7 +476,15 @@
       <option name="project" value="LOCAL" />
       <updated>1684783593570</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="-nivel 1 2">
+      <option name="closed" value="true" />
+      <created>1684783600230</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1684783600230</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
