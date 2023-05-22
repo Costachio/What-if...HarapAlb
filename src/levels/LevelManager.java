@@ -28,10 +28,11 @@ public class LevelManager {
 		lvlIndex++;
 		game.getPlaying().getPlayer().updateScore(100);
 		saveScoreToDatabase(game.playerName,game.getPlaying().getPlayer().getScore());
-		if (lvlIndex >= levels.size()) {
+		if (lvlIndex >= 3) {
 			lvlIndex = 0;
 			System.out.println("No more levels! Game Completed!");
 			Gamestate.state = Gamestate.MENU;
+			return;
 		}
 
 		Level newLevel = levels.get(lvlIndex);

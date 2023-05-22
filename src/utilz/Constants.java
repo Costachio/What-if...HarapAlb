@@ -96,11 +96,11 @@ public class Constants {
         public static int GetMaxHealth(int enemy_type) {
             switch (enemy_type) {
                 case CYCLOP:
-                    return 21;
+                    return 1;
                 case GOLEM:
-                    return 21;
+                    return 1;
                 case BEAR:
-                    return 21;
+                    return 1;
                 default:
                     return 1;
             }
@@ -113,7 +113,7 @@ public class Constants {
                 case GOLEM:
                     return 1;
                 default:
-                    return 0;
+                    return 1;
             }
 
         }
